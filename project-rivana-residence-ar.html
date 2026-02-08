@@ -1,266 +1,208 @@
+
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ريڤانا ريزيدنس (Rivana Residence) | Atlas Coast Realty</title>
+  <title>ريڤانا ريزيدنس | Atlas Coast Realty</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --sand: #f7f1e6;
-      --clay: #c86b3c;
-      --copper: #b55a33;
-      --forest: #1f3b34;
-      --ink: #1b1a17;
-      --cream: #fffaf3;
-      --shadow: 0 20px 50px rgba(27, 26, 23, 0.12);
-      --radius: 22px;
+      --navy: #0c1c3a;
+      --navy-700: #0b1630;
+      --gold: #c9a05a;
+      --sand: #f5f1ea;
+      --ink: #10131a;
+      --muted: #5c6472;
+      --card: #ffffff;
+      --shadow: 0 18px 50px rgba(13, 20, 37, 0.12);
+      --radius: 18px;
     }
-
     * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: "Cairo", "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #fffaf0, #f3e6d3 55%, #efe0c8 100%);
-      color: var(--ink);
-      direction: rtl;
-    }
-
+    body { margin: 0; font-family: "Manrope", sans-serif; color: var(--ink); background: #f4f6fb; }
     a { color: inherit; text-decoration: none; }
-
-    header {
-      padding: 20px 24px;
-      background: rgba(255, 250, 243, 0.92);
-      border-bottom: 1px solid rgba(27, 26, 23, 0.08);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px 70px;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      align-items: center;
-      padding: 40px 0 24px;
-    }
-
-    .hero img {
-      width: 100%;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      height: 320px;
-      object-fit: cover;
-    }
-
-    h1 { font-family: "Playfair Display", serif; margin-bottom: 10px; }
-    h2 { font-family: "Playfair Display", serif; margin: 0 0 14px; }
-
-    .pill {
-      display: inline-flex;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(200, 107, 60, 0.12);
-      color: var(--copper);
-      font-weight: 600;
-      font-size: 0.85rem;
-    }
-
-    .meta-grid {
-      margin-top: 16px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-    }
-
-    .meta-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 14px;
-      border: 1px solid rgba(27, 26, 23, 0.08);
-    }
-
-    .section {
-      margin-top: 28px;
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: var(--shadow);
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-    }
-
-    ul { margin: 0; padding-inline-start: 18px; }
-
-    .back { font-weight: 600; }
-
-    .cta {
-      margin-top: 18px;
-      display: inline-flex;
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(27, 26, 23, 0.2);
-      background: rgba(255, 255, 255, 0.7);
-      font-weight: 600;
-    }
-
-    .source { font-size: 0.9rem; color: #6b6259; margin-top: 12px; }
-  
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-      background: #fff;
-    }
-
-  
-
-    .hero-slider {
-      position: relative;
-      width: 100%;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      height: 320px;
-      background: #f2e7d6;
-    }
-
-    .hero-slider img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 0.6s ease;
-    }
-
-    .hero-slider img.active {
-      opacity: 1;
-      position: absolute;
-    }
-    .hero-slider img:first-child {
-      opacity: 1;
-    }
-
-
-    .slider-dots {
-      position: absolute;
-      bottom: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
-      z-index: 2;
-    }
-
-    .slider-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.6);
-      border: 1px solid rgba(0,0,0,0.1);
-      cursor: pointer;
-    }
-
+    .topbar { background: var(--navy-700); color: #fff; font-size: 0.85rem; }
+    .topbar .wrap { max-width: 1200px; margin: 0 auto; padding: 10px 20px; display: flex; justify-content: space-between; gap: 12px; }
+    .nav { background: #fff; border-bottom: 1px solid #e6e8ef; position: sticky; top: 0; z-index: 10; }
+    .nav .wrap { max-width: 1200px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .logo { font-family: "Playfair Display", serif; font-size: 20px; letter-spacing: 0.4px; color: var(--navy); }
+    .nav-links { display: flex; gap: 16px; font-weight: 600; color: #3b4252; overflow-x: auto; scrollbar-width: none; }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .hero { position: relative; color: #fff; }
+    .hero-media { position: relative; height: 520px; overflow: hidden; }
+    .hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; }
+    .hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(9,18,35,0.75), rgba(9,18,35,0.2)); }
+    .hero-content { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.7fr); gap: 24px; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .hero-left { z-index: 2; display: grid; gap: 12px; }
+    .hero-left h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); margin: 0; }
+    .hero-left .pill { display: inline-flex; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.2); font-weight: 600; width: fit-content; }
+    .hero-left .meta { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.95rem; color: #e6e8ef; }
+    .hero-form { z-index: 2; background: #fff; color: var(--ink); border-radius: 18px; padding: 20px; box-shadow: var(--shadow); display: grid; gap: 12px; }
+    .hero-form h3 { margin: 0 0 8px; }
+    .hero-form input, .hero-form textarea { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid #e3e6ef; font-family: inherit; }
+    .hero-form button { background: var(--navy); color: #fff; border: none; padding: 12px; border-radius: 999px; font-weight: 600; cursor: pointer; }
+    .hero-cta-mobile { display: none; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 999px; background: var(--navy); color: #fff; font-weight: 600; width: fit-content; }
+    .modal { position: fixed; inset: 0; background: rgba(8, 14, 28, 0.6); display: none; align-items: center; justify-content: center; padding: 20px; z-index: 100; }
+    .modal.open { display: flex; }
+    .modal-card { background: #fff; border-radius: 18px; padding: 18px; width: min(520px, 100%); box-shadow: var(--shadow); display: grid; gap: 12px; }
+    .modal-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .modal-close { border: none; background: #eef1f7; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-size: 18px; line-height: 1; }
+    .section { max-width: 1200px; margin: 0 auto; padding: 48px 20px; }
+    .section h2 { font-family: "Playfair Display", serif; margin-bottom: 16px; }
+    .overview { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: start; }
+    .facts { background: #fff; border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; }
+    .facts header { background: var(--navy); color: #fff; padding: 14px 18px; font-weight: 700; }
+    .facts ul { list-style: none; margin: 0; padding: 0; }
+    .facts li { display: flex; justify-content: space-between; padding: 12px 18px; border-bottom: 1px solid #eef1f7; }
+    .facts li span { color: var(--muted); }
+    .gallery-slider { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); height: 420px; background: #e9edf5; }
+    .gallery-slider img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.6s ease; }
+    .gallery-slider img.active { opacity: 1; }
+    .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 50%; border: none; background: rgba(12, 28, 58, 0.75); color: #fff; font-size: 20px; cursor: pointer; display: grid; place-items: center; z-index: 3; }
+    .slider-btn.prev { left: 14px; }
+    .slider-btn.next { right: 14px; }
+    .slider-btn.fullscreen { top: 18px; right: 18px; transform: none; font-size: 16px; width: 36px; height: 36px; }
+    .slider-dots { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 2; }
+    .slider-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.1); cursor: pointer; }
     .slider-dot.active { background: #fff; }
-
+    .nearby { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .nearby-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+    .nearby-card { background: #fff; padding: 14px; border-radius: 14px; box-shadow: var(--shadow); font-size: 0.9rem; }
+    .map { background: #e9edf5; border-radius: 16px; min-height: 360px; box-shadow: var(--shadow); overflow: hidden; }
+    .map iframe { width: 100%; height: 100%; border: 0; border-radius: 16px; }
+    .faq { background: #fff; border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; }
+    .faq-item { width: 100%; text-align: left; background: #fff; border: none; padding: 14px 18px; border-bottom: 1px solid #eef1f7; display: flex; justify-content: space-between; align-items: center; font-weight: 600; cursor: pointer; }
+    .faq-panel { display: none; padding: 0 18px 16px; color: #4b5563; border-bottom: 1px solid #eef1f7; }
+    .faq-item[aria-expanded="true"] + .faq-panel { display: block; }
+    .faq-icon { font-size: 18px; }
+    .faq-item[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+    .city-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .city-card { background: #fff; border-radius: 16px; padding: 18px; box-shadow: var(--shadow); display: grid; gap: 10px; }
+    .city-card h3 { margin: 0; }
+    .city-card a { font-weight: 600; color: var(--navy); }
+    @media (max-width: 980px) {
+      .hero-content { grid-template-columns: 1fr; padding-top: 60px; }
+      .hero-form { max-width: 420px; }
+      .overview { grid-template-columns: 1fr; }
+      .nearby { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .nav .wrap { flex-direction: column; align-items: flex-start; }
+      .nav-links { flex-wrap: wrap; gap: 10px; padding-bottom: 6px; }
+      .hero-media { height: 420px; }
+      .hero { background: #f4f6fb; }
+      .hero-content { position: static; padding: 24px 20px 0; }
+      .hero-left { color: var(--ink); }
+      .hero-left .pill { background: #e8ecf6; color: var(--navy); }
+      .hero-left .meta { font-size: 0.85rem; color: #5c6472; }
+      .hero-form { display: none; }
+      .hero-cta-mobile { display: inline-flex; }
+      .section { padding: 36px 20px; }
+      .facts li { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .gallery-slider { height: 280px; }
+      .slider-btn.prev { left: 8px; }
+      .slider-btn.next { right: 8px; }
+      .slider-btn.fullscreen { right: 10px; top: 10px; }
+      .nearby-list { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .hero-media { height: 340px; }
+      .hero-left h1 { font-size: 2rem; }
+      .hero-form { padding: 16px; }
+      .gallery-slider { height: 240px; }
+    }
   </style>
 
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <a class="back" href="maroc-real-estate-ar.html">العودة إلى الصفحة الرئيسية</a>
-    </div>
-  </header>
-  <main class="wrap">
-    <section class="hero">
-      <div>
-        <div class="pill">مشروع</div>
-        <h1>ريڤانا ريزيدنس (Rivana Residence)</h1>
+  <div class="topbar"><div class="wrap"><div>Atlas Coast Realty · طنجة</div><div>NL · EN · FR · AR</div></div></div>
+  <div class="nav"><div class="wrap"><div class="logo">Atlas Coast Realty</div><div class="nav-links"><a href="#overview">نظرة عامة</a><a href="#gallery">المعرض</a><a href="#nearby">بالقرب من</a><a href="#faq">الأسئلة</a></div></div></div>
+  <section class="hero">
+    <div class="hero-media"><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/rivana-residence/rivana-residence-hero.png" alt="ريڤانا ريزيدنس" /></div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="pill">Project</div>
+        <h1>ريڤانا ريزيدنس</h1>
+        <div class="meta"><span>بالقرب من ساحة الأمم، طنجة</span><span>الحالة: قيد الإنشاء</span><span>التسليم: 2026</span></div>
         <p>استوديوهات وشقق في حي مركزي بطنجة.</p>
-        <div class="meta-grid"><div class="meta-card"><strong>المساحة</strong><div>53–130 م²</div></div>
-<div class="meta-card"><strong>غرف النوم</strong><div>1–3</div></div>
-<div class="meta-card"><strong>الحمامات</strong><div>1–2</div></div>
-<div class="meta-card"><strong>الموقع</strong><div>بالقرب من ساحة الأمم، طنجة</div></div></div>
-        <a class="cta" href="maroc-real-estate-ar.html#contact">احجز زيارة</a>
+        <button class="hero-cta-mobile" type="button" data-open-modal>تواصل معنا</button>
       </div>
-      <div class="hero-slider" data-slider>
-<img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/rivana-residence/rivana-residence-hero.png" alt="rivana-residence" />
-<img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/rivana-residence/rivana-residence-gallery-01.png" alt="rivana-residence" />
-<img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/rivana-residence/rivana-residence-gallery-02.png" alt="rivana-residence" />
-<img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/rivana-residence/rivana-residence-gallery-03.png" alt="rivana-residence" />
-  <div class="slider-dots">
-    <span class="slider-dot"></span>
-<span class="slider-dot"></span>
-<span class="slider-dot"></span>
-<span class="slider-dot"></span>
+      <form class="hero-form">
+        <h3>تواصل معنا</h3>
+        <input placeholder="الاسم" />
+        <input placeholder="اللقب" />
+        <input placeholder="E-mail" />
+        <input placeholder="الهاتف" />
+        <textarea rows="3" placeholder="الرسالة"></textarea>
+        <button type="button">إرسال</button>
+      </form>
+    </div>
+  </section>
+  <section id="overview" class="section">
+    <div class="overview">
+      <div>
+        <h2>نظرة عامة</h2>
+        <p>يقع Rivana في موقع مركزي قريب من المدارس والمتاجر والشواطئ ووسائل النقل.</p><p>مناسب للسكن أو الاستثمار في طنجة.</p>
+        <h3>المميزات</h3>
+        <ul><li>مصاعد</li><li>تكييف مركزي</li><li>مطبخ مجهز</li><li>نظام ذكي</li><li>زجاج مزدوج</li><li>موقف سيارات تحت الأرض</li></ul>
+      </div>
+      <div class="facts"><header>حقائق المشروع</header><ul><li><span>غرف النوم</span><strong>1–3</strong></li><li><span>الحمامات</span><strong>1–2</strong></li><li><span>المساحة</span><strong>53–130 م²</strong></li><li><span>السعر ابتداءً من</span><strong>عند الطلب</strong></li><li><span>الحالة</span><strong>قيد الإنشاء</strong></li><li><span>التسليم</span><strong>2026</strong></li></ul></div>
+    </div>
+  </section>
+  <section id="gallery" class="section"><h2>المعرض</h2><div class="gallery-slider" data-gallery>
+      <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/rivana-residence/rivana-residence-hero.png" alt="Gallery" />
+      <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/rivana-residence/rivana-residence-gallery-01.png" alt="Gallery" />
+      <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/rivana-residence/rivana-residence-gallery-02.png" alt="Gallery" />
+      <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/rivana-residence/rivana-residence-gallery-03.png" alt="Gallery" />
+      <button class="slider-btn prev" aria-label="Previous">&#10094;</button>
+      <button class="slider-btn next" aria-label="Next">&#10095;</button>
+      <button class="slider-btn fullscreen" aria-label="Fullscreen">⤢</button>
+      <div class="slider-dots">
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
+      </div>
+    </div></section>
+  <section id="nearby" class="section"><h2>بالقرب من</h2><div class="nearby"><div class="nearby-list"><div class="nearby-card">ساحة الأمم · 6 دقائق</div><div class="nearby-card">مول ابن بطوطة · 6 دقائق</div><div class="nearby-card">بولفار · 4 دقائق</div></div><div class="map">Kaart placeholder</div></div></section>
+  <section id="faq" class="section"><h2>الأسئلة الشائعة</h2><div class="faq"><button class="faq-item" type="button" aria-expanded="false"><span>أين يقع Rivana؟</span><span class="faq-icon">+</span></button><div class="faq-panel">بالقرب من ساحة الأمم في طنجة.</div><button class="faq-item" type="button" aria-expanded="false"><span>الأنواع؟</span><span class="faq-icon">+</span></button><div class="faq-panel">استوديوهات وشقق 1–3 غرف.</div><button class="faq-item" type="button" aria-expanded="false"><span>هل يوجد موقف؟</span><span class="faq-icon">+</span></button><div class="faq-panel">نعم، موقف تحت الأرض.</div><button class="faq-item" type="button" aria-expanded="false"><span>زيارة؟</span><span class="faq-icon">+</span></button><div class="faq-panel">تواصل معنا.</div></div></section>
+  <div class="modal" data-modal>
+    <div class="modal-card">
+      <div class="modal-header"><strong>تواصل معنا</strong><button class="modal-close" type="button" data-close-modal>&times;</button></div>
+      <input placeholder="الاسم" />
+      <input placeholder="اللقب" />
+      <input placeholder="E-mail" />
+      <input placeholder="الهاتف" />
+      <textarea rows="3" placeholder="الرسالة"></textarea>
+      <button type="button" class="hero-cta-mobile" style="display:inline-flex;justify-content:center;">إرسال</button>
+    </div>
   </div>
-</div>
-</div>
-</div>
-    </section>
-
-    <section class="section">
-  <h2>الوصف</h2>
-  <p>يقع Rivana في موقع مركزي قريب من المدارس والمتاجر والشواطئ ووسائل النقل.</p><p>مناسب للسكن أو الاستثمار في طنجة.</p>
-</section>
-<section class="section">
-  <h2>المرافق</h2>
-  <ul><li>مصاعد</li><li>تكييف مركزي</li><li>مطبخ مجهز</li><li>نظام ذكي</li><li>زجاج مزدوج</li><li>موقف سيارات تحت الأرض</li><li>إقامة آمنة</li><li>فيديوفون</li></ul>
-</section>
-<section class="section">
-  <h2>التشطيبات والمواد</h2>
-  <ul><li>عزل حراري وصوتي</li><li>إضاءة واجهة LED</li><li>مواد عالية الجودة</li><li>أعمال ألمنيوم وخشب</li></ul>
-</section>
-<section class="section">
-  <h2>بالقرب من</h2>
-  <ul><li>مسجد بدر 2 دقيقة</li><li>مركز الشرطة 2 دقيقة</li><li>EMSI 3 دقائق</li><li>بولفار 4 دقائق</li><li>ساحة الأمم 6 دقائق</li><li>مول ابن بطوطة 6 دقائق</li></ul>
-</section>
-
-
-    <div class="source">المصدر: <a href="https://immoworld.ma/en/apartment/residence-rivana-a-tanger-appartements-de-luxe-a-vendre-proche-de-la-place-des-nations/" target="_blank" rel="noopener">https://immoworld.ma/en/apartment/residence-rivana-a-tanger-appartements-de-luxe-a-vendre-proche-de-la-place-des-nations/</a></div>
-  </main>
-
   <script>
-    document.querySelectorAll('[data-slider]').forEach((slider) => {
-      const images = Array.from(slider.querySelectorAll('img'));
-      const dots = Array.from(slider.querySelectorAll('.slider-dot'));
-      let idx = 0;
-      const show = (i) => {
-        images.forEach((img, j) => img.classList.toggle('active', j === i));
-        dots.forEach((dot, j) => dot.classList.toggle('active', j === i));
-        idx = i;
-      };
-      dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
-      setInterval(() => show((idx + 1) % images.length), 5000);
-      show(0);
-    });
+    const rotate = (root) => {
+      const images = Array.from(root.querySelectorAll('img'));
+      const dots = Array.from(root.querySelectorAll('.slider-dot'));
+      const prev = root.querySelector('.slider-btn.prev');
+      const next = root.querySelector('.slider-btn.next');
+      const full = root.querySelector('.slider-btn.fullscreen');
+      if (!images.length) return;
+      let idx = 0; let timer;
+      const show = (i) => { images.forEach((img,j)=>img.classList.toggle('active', j===i)); dots.forEach((dot,j)=>dot.classList.toggle('active', j===i)); idx=i; };
+      const step = (dir) => show((idx + dir + images.length) % images.length);
+      const start = () => { timer = setInterval(() => step(1), 5000); };
+      const stop = () => { if (timer) clearInterval(timer); };
+      dots.forEach((dot,i)=>dot.addEventListener('click',()=>{ stop(); show(i); start(); }));
+      prev?.addEventListener('click',()=>{ stop(); step(-1); start(); });
+      next?.addEventListener('click',()=>{ stop(); step(1); start(); });
+      full?.addEventListener('click',()=>{ const active = root.querySelector('img.active') || images[0]; if (!active) return; if (active.requestFullscreen) active.requestFullscreen(); else if (active.webkitRequestFullscreen) active.webkitRequestFullscreen(); });
+      show(0); start();
+    };
+    const gallery = document.querySelector('[data-gallery]'); if (gallery) rotate(gallery);
+    document.querySelectorAll('.faq-item').forEach((btn)=>{ btn.addEventListener('click',()=>{ const expanded = btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded', expanded ? 'false' : 'true'); }); });
+    const modal = document.querySelector('[data-modal]'); const openBtn = document.querySelector('[data-open-modal]'); const closeBtn = document.querySelector('[data-close-modal]');
+    if (modal && openBtn) { const close = ()=>modal.classList.remove('open'); openBtn.addEventListener('click',()=>modal.classList.add('open')); closeBtn?.addEventListener('click', close); modal.addEventListener('click',(e)=>{ if (e.target===modal) close(); }); document.addEventListener('keydown',(e)=>{ if (e.key==='Escape') close(); }); }
   </script>
-
 </body>
 </html>

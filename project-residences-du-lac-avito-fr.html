@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="fr" dir="ltr">
 <head>
@@ -6,156 +7,196 @@
   <title>Ryad Al Andalous – Les Résidences du Lac | Atlas Coast Realty</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --sand: #f7f1e6;
-      --clay: #c86b3c;
-      --copper: #b55a33;
-      --forest: #1f3b34;
-      --ink: #1b1a17;
-      --cream: #fffaf3;
-      --shadow: 0 20px 50px rgba(27, 26, 23, 0.12);
-      --radius: 22px;
+      --navy: #0c1c3a;
+      --navy-700: #0b1630;
+      --gold: #c9a05a;
+      --sand: #f5f1ea;
+      --ink: #10131a;
+      --muted: #5c6472;
+      --card: #ffffff;
+      --shadow: 0 18px 50px rgba(13, 20, 37, 0.12);
+      --radius: 18px;
     }
-
     * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: "Manrope", "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #fffaf0, #f3e6d3 55%, #efe0c8 100%);
-      color: var(--ink);
-      direction: ltr;
-    }
-
+    body { margin: 0; font-family: "Manrope", sans-serif; color: var(--ink); background: #f4f6fb; }
     a { color: inherit; text-decoration: none; }
-
-    header {
-      padding: 20px 24px;
-      background: rgba(255, 250, 243, 0.92);
-      border-bottom: 1px solid rgba(27, 26, 23, 0.08);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+    .topbar { background: var(--navy-700); color: #fff; font-size: 0.85rem; }
+    .topbar .wrap { max-width: 1200px; margin: 0 auto; padding: 10px 20px; display: flex; justify-content: space-between; gap: 12px; }
+    .nav { background: #fff; border-bottom: 1px solid #e6e8ef; position: sticky; top: 0; z-index: 10; }
+    .nav .wrap { max-width: 1200px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .logo { font-family: "Playfair Display", serif; font-size: 20px; letter-spacing: 0.4px; color: var(--navy); }
+    .nav-links { display: flex; gap: 16px; font-weight: 600; color: #3b4252; overflow-x: auto; scrollbar-width: none; }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .hero { position: relative; color: #fff; }
+    .hero-media { position: relative; height: 520px; overflow: hidden; }
+    .hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; }
+    .hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(9,18,35,0.75), rgba(9,18,35,0.2)); }
+    .hero-content { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.7fr); gap: 24px; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .hero-left { z-index: 2; display: grid; gap: 12px; }
+    .hero-left h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); margin: 0; }
+    .hero-left .pill { display: inline-flex; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.2); font-weight: 600; width: fit-content; }
+    .hero-left .meta { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.95rem; color: #e6e8ef; }
+    .hero-form { z-index: 2; background: #fff; color: var(--ink); border-radius: 18px; padding: 20px; box-shadow: var(--shadow); display: grid; gap: 12px; }
+    .hero-form h3 { margin: 0 0 8px; }
+    .hero-form input, .hero-form textarea { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid #e3e6ef; font-family: inherit; }
+    .hero-form button { background: var(--navy); color: #fff; border: none; padding: 12px; border-radius: 999px; font-weight: 600; cursor: pointer; }
+    .hero-cta-mobile { display: none; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 999px; background: var(--navy); color: #fff; font-weight: 600; width: fit-content; }
+    .modal { position: fixed; inset: 0; background: rgba(8, 14, 28, 0.6); display: none; align-items: center; justify-content: center; padding: 20px; z-index: 100; }
+    .modal.open { display: flex; }
+    .modal-card { background: #fff; border-radius: 18px; padding: 18px; width: min(520px, 100%); box-shadow: var(--shadow); display: grid; gap: 12px; }
+    .modal-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .modal-close { border: none; background: #eef1f7; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-size: 18px; line-height: 1; }
+    .section { max-width: 1200px; margin: 0 auto; padding: 48px 20px; }
+    .section h2 { font-family: "Playfair Display", serif; margin-bottom: 16px; }
+    .overview { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: start; }
+    .facts { background: #fff; border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; }
+    .facts header { background: var(--navy); color: #fff; padding: 14px 18px; font-weight: 700; }
+    .facts ul { list-style: none; margin: 0; padding: 0; }
+    .facts li { display: flex; justify-content: space-between; padding: 12px 18px; border-bottom: 1px solid #eef1f7; }
+    .facts li span { color: var(--muted); }
+    .gallery-slider { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); height: 420px; background: #e9edf5; }
+    .gallery-slider img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.6s ease; }
+    .gallery-slider img.active { opacity: 1; }
+    .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 50%; border: none; background: rgba(12, 28, 58, 0.75); color: #fff; font-size: 20px; cursor: pointer; display: grid; place-items: center; z-index: 3; }
+    .slider-btn.prev { left: 14px; }
+    .slider-btn.next { right: 14px; }
+    .slider-btn.fullscreen { top: 18px; right: 18px; transform: none; font-size: 16px; width: 36px; height: 36px; }
+    .slider-dots { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 2; }
+    .slider-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.1); cursor: pointer; }
+    .slider-dot.active { background: #fff; }
+    .nearby { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .nearby-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+    .nearby-card { background: #fff; padding: 14px; border-radius: 14px; box-shadow: var(--shadow); font-size: 0.9rem; }
+    .map { background: #e9edf5; border-radius: 16px; min-height: 360px; box-shadow: var(--shadow); overflow: hidden; }
+    .map iframe { width: 100%; height: 100%; border: 0; border-radius: 16px; }
+    .faq { background: #fff; border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; }
+    .faq-item { width: 100%; text-align: left; background: #fff; border: none; padding: 14px 18px; border-bottom: 1px solid #eef1f7; display: flex; justify-content: space-between; align-items: center; font-weight: 600; cursor: pointer; }
+    .faq-panel { display: none; padding: 0 18px 16px; color: #4b5563; border-bottom: 1px solid #eef1f7; }
+    .faq-item[aria-expanded="true"] + .faq-panel { display: block; }
+    .faq-icon { font-size: 18px; }
+    .faq-item[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+    .city-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .city-card { background: #fff; border-radius: 16px; padding: 18px; box-shadow: var(--shadow); display: grid; gap: 10px; }
+    .city-card h3 { margin: 0; }
+    .city-card a { font-weight: 600; color: var(--navy); }
+    @media (max-width: 980px) {
+      .hero-content { grid-template-columns: 1fr; padding-top: 60px; }
+      .hero-form { max-width: 420px; }
+      .overview { grid-template-columns: 1fr; }
+      .nearby { grid-template-columns: 1fr; }
     }
-
-    .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px 70px;
+    @media (max-width: 720px) {
+      .nav .wrap { flex-direction: column; align-items: flex-start; }
+      .nav-links { flex-wrap: wrap; gap: 10px; padding-bottom: 6px; }
+      .hero-media { height: 420px; }
+      .hero { background: #f4f6fb; }
+      .hero-content { position: static; padding: 24px 20px 0; }
+      .hero-left { color: var(--ink); }
+      .hero-left .pill { background: #e8ecf6; color: var(--navy); }
+      .hero-left .meta { font-size: 0.85rem; color: #5c6472; }
+      .hero-form { display: none; }
+      .hero-cta-mobile { display: inline-flex; }
+      .section { padding: 36px 20px; }
+      .facts li { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .gallery-slider { height: 280px; }
+      .slider-btn.prev { left: 8px; }
+      .slider-btn.next { right: 8px; }
+      .slider-btn.fullscreen { right: 10px; top: 10px; }
+      .nearby-list { grid-template-columns: 1fr; }
     }
-
-    .hero {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      align-items: center;
-      padding: 40px 0 24px;
+    @media (max-width: 520px) {
+      .hero-media { height: 340px; }
+      .hero-left h1 { font-size: 2rem; }
+      .hero-form { padding: 16px; }
+      .gallery-slider { height: 240px; }
     }
-
-    .hero img {
-      width: 100%;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      height: 320px;
-      object-fit: cover;
-    }
-
-    h1 { font-family: "Playfair Display", serif; margin-bottom: 10px; }
-    h2 { font-family: "Playfair Display", serif; margin: 0 0 14px; }
-
-    .pill {
-      display: inline-flex;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(200, 107, 60, 0.12);
-      color: var(--copper);
-      font-weight: 600;
-      font-size: 0.85rem;
-    }
-
-    .meta-grid {
-      margin-top: 16px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-    }
-
-    .meta-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 14px;
-      border: 1px solid rgba(27, 26, 23, 0.08);
-    }
-
-    .section {
-      margin-top: 28px;
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: var(--shadow);
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-    }
-
-    ul { margin: 0; padding-inline-start: 18px; }
-
-    .back { font-weight: 600; }
-
-    .cta {
-      margin-top: 18px;
-      display: inline-flex;
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(27, 26, 23, 0.2);
-      background: rgba(255, 255, 255, 0.7);
-      font-weight: 600;
-    }
-
-    .source { font-size: 0.9rem; color: #6b6259; margin-top: 12px; }
   </style>
 
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <a class="back" href="maroc-real-estate-fr.html">Retour à l’aperçu</a>
-    </div>
-  </header>
-  <main class="wrap">
-    <section class="hero">
-      <div>
-        <div class="pill">Projet</div>
+  <div class="topbar"><div class="wrap"><div>Atlas Coast Realty · Tanger</div><div>NL · EN · FR · AR</div></div></div>
+  <div class="nav"><div class="wrap"><div class="logo">Atlas Coast Realty</div><div class="nav-links"><a href="#overview">Aperçu</a><a href="#gallery">Galerie</a><a href="#nearby">À proximité</a><a href="#faq">FAQ</a></div></div></div>
+  <section class="hero">
+    <div class="hero-media"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Ryad Al Andalous – Les Résidences du Lac" /></div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="pill">Project</div>
         <h1>Ryad Al Andalous – Les Résidences du Lac</h1>
+        <div class="meta"><span>Hay Riad, Rabat</span><span>Statut: En construction</span><span>Livraison: Juin 2026</span></div>
         <p>Appartements haut standing dans un cadre vert avec équipements modernes.</p>
-        <div class="meta-grid"><div class="meta-card"><strong>Statut</strong><div>En construction</div></div>
-<div class="meta-card"><strong>Livraison</strong><div>Juin 2026</div></div>
-<div class="meta-card"><strong>Prix à partir de</strong><div>3 100 000 DH</div></div>
-<div class="meta-card"><strong>Localisation</strong><div>Hay Riad, Rabat</div></div></div>
-        <a class="cta" href="maroc-real-estate-fr.html#contact">Planifier une visite</a>
+        <button class="hero-cta-mobile" type="button" data-open-modal>Nous contacter</button>
       </div>
-      <img src="https://content.avito.ma/immoneuf/objects/a2/a2bf255a-5ede-4f30-a6d4-638d889d3b63" alt="Ryad Al Andalous – Les Résidences du Lac" />
-    </section>
-
-    <section class="section">
-  <h2>Description</h2>
-  <p>Ryad Al Andalous est un complexe prestigieux à Hay Riad, mêlant architecture contemporaine, espaces verts et prestations haut de gamme.</p><p>Le projet combine confort urbain et tranquillité avec une excellente accessibilité.</p>
-</section>
-<section class="section">
-  <h2>Types de logements</h2>
-  <ul><li>Appartements spacieux avec finitions premium.</li><li>Projet avec commerces, aires de jeux et écoles à proximité.</li></ul>
-</section>
-<section class="section">
-  <h2>Équipements</h2>
-  <ul><li>Concierge</li><li>Sécurité</li><li>Ascenseur</li><li>Climatisation</li><li>Espaces verts</li><li>Piscines et services</li></ul>
-</section>
-    <div class="source">Source: <a href="https://immoneuf.avito.ma/fr/d/prestigia-luxury-homes-j4q/ryad-al-andalous---les-residences-du-lac-rabat-riad-j5m" target="_blank" rel="noopener">https://immoneuf.avito.ma/fr/d/prestigia-luxury-homes-j4q/ryad-al-andalous---les-residences-du-lac-rabat-riad-j5m</a></div>
-  </main>
+      <form class="hero-form">
+        <h3>Nous contacter</h3>
+        <input placeholder="Prénom" />
+        <input placeholder="Nom" />
+        <input placeholder="E-mail" />
+        <input placeholder="Téléphone" />
+        <textarea rows="3" placeholder="Message"></textarea>
+        <button type="button">Envoyer</button>
+      </form>
+    </div>
+  </section>
+  <section id="overview" class="section">
+    <div class="overview">
+      <div>
+        <h2>Aperçu</h2>
+        <p>Complexe prestigieux à Hay Riad avec espaces verts et prestations haut de gamme.</p>
+        <h3>Caractéristiques</h3>
+        <ul><li>Concierge</li><li>Sécurité</li><li>Ascenseur</li><li>Climatisation</li><li>Piscines</li></ul>
+      </div>
+      <div class="facts"><header>Faits clés</header><ul><li><span>Chambres</span><strong>2–3</strong></li><li><span>Salles de bain</span><strong>2–3</strong></li><li><span>Surface</span><strong>105–213 m²</strong></li><li><span>Prix à partir de</span><strong>3 100 000 DH</strong></li><li><span>Statut</span><strong>En construction</strong></li><li><span>Livraison</span><strong>Juin 2026</strong></li></ul></div>
+    </div>
+  </section>
+  <section id="gallery" class="section"><h2>Galerie</h2><div class="gallery-slider" data-gallery>
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Gallery" />
+      <button class="slider-btn prev" aria-label="Previous">&#10094;</button>
+      <button class="slider-btn next" aria-label="Next">&#10095;</button>
+      <button class="slider-btn fullscreen" aria-label="Fullscreen">⤢</button>
+      <div class="slider-dots">
+        <span class="slider-dot"></span>
+      </div>
+    </div></section>
+  <section id="nearby" class="section"><h2>À proximité</h2><div class="nearby"><div class="nearby-list"><div class="nearby-card">Hay Riad · 5 min</div><div class="nearby-card">Centre Rabat · 15 min</div></div><div class="map">Kaart placeholder</div></div></section>
+  <section id="faq" class="section"><h2>FAQs</h2><div class="faq"><button class="faq-item" type="button" aria-expanded="false"><span>Où se situe le projet ?</span><span class="faq-icon">+</span></button><div class="faq-panel">À Hay Riad, Rabat.</div><button class="faq-item" type="button" aria-expanded="false"><span>Livraison ?</span><span class="faq-icon">+</span></button><div class="faq-panel">Juin 2026.</div><button class="faq-item" type="button" aria-expanded="false"><span>Types ?</span><span class="faq-icon">+</span></button><div class="faq-panel">Appartements 2–3 chambres.</div><button class="faq-item" type="button" aria-expanded="false"><span>Plan de paiement ?</span><span class="faq-icon">+</span></button><div class="faq-panel">Contactez‑nous.</div></div></section>
+  <div class="modal" data-modal>
+    <div class="modal-card">
+      <div class="modal-header"><strong>Nous contacter</strong><button class="modal-close" type="button" data-close-modal>&times;</button></div>
+      <input placeholder="Prénom" />
+      <input placeholder="Nom" />
+      <input placeholder="E-mail" />
+      <input placeholder="Téléphone" />
+      <textarea rows="3" placeholder="Message"></textarea>
+      <button type="button" class="hero-cta-mobile" style="display:inline-flex;justify-content:center;">Envoyer</button>
+    </div>
+  </div>
+  <script>
+    const rotate = (root) => {
+      const images = Array.from(root.querySelectorAll('img'));
+      const dots = Array.from(root.querySelectorAll('.slider-dot'));
+      const prev = root.querySelector('.slider-btn.prev');
+      const next = root.querySelector('.slider-btn.next');
+      const full = root.querySelector('.slider-btn.fullscreen');
+      if (!images.length) return;
+      let idx = 0; let timer;
+      const show = (i) => { images.forEach((img,j)=>img.classList.toggle('active', j===i)); dots.forEach((dot,j)=>dot.classList.toggle('active', j===i)); idx=i; };
+      const step = (dir) => show((idx + dir + images.length) % images.length);
+      const start = () => { timer = setInterval(() => step(1), 5000); };
+      const stop = () => { if (timer) clearInterval(timer); };
+      dots.forEach((dot,i)=>dot.addEventListener('click',()=>{ stop(); show(i); start(); }));
+      prev?.addEventListener('click',()=>{ stop(); step(-1); start(); });
+      next?.addEventListener('click',()=>{ stop(); step(1); start(); });
+      full?.addEventListener('click',()=>{ const active = root.querySelector('img.active') || images[0]; if (!active) return; if (active.requestFullscreen) active.requestFullscreen(); else if (active.webkitRequestFullscreen) active.webkitRequestFullscreen(); });
+      show(0); start();
+    };
+    const gallery = document.querySelector('[data-gallery]'); if (gallery) rotate(gallery);
+    document.querySelectorAll('.faq-item').forEach((btn)=>{ btn.addEventListener('click',()=>{ const expanded = btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded', expanded ? 'false' : 'true'); }); });
+    const modal = document.querySelector('[data-modal]'); const openBtn = document.querySelector('[data-open-modal]'); const closeBtn = document.querySelector('[data-close-modal]');
+    if (modal && openBtn) { const close = ()=>modal.classList.remove('open'); openBtn.addEventListener('click',()=>modal.classList.add('open')); closeBtn?.addEventListener('click', close); modal.addEventListener('click',(e)=>{ if (e.target===modal) close(); }); document.addEventListener('keydown',(e)=>{ if (e.key==='Escape') close(); }); }
+  </script>
 </body>
 </html>
