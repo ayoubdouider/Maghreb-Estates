@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="nl" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Achakar Gardens | Atlas Coast Realty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --sand: #f7f1e6;
+      --clay: #c86b3c;
+      --copper: #b55a33;
+      --forest: #1f3b34;
+      --ink: #1b1a17;
+      --cream: #fffaf3;
+      --shadow: 0 20px 50px rgba(27, 26, 23, 0.12);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #fffaf0, #f3e6d3 55%, #efe0c8 100%);
+      color: var(--ink);
+      direction: ltr;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      padding: 20px 24px;
+      background: rgba(255, 250, 243, 0.92);
+      border-bottom: 1px solid rgba(27, 26, 23, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      align-items: center;
+      padding: 36px 0 18px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      margin-bottom: 10px;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+    }
+
+    .hero p { line-height: 1.7; }
+
+    .lang-switch {
+      display: inline-flex;
+      gap: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .lang-switch a {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(31, 59, 52, 0.08);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    .card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(200, 107, 60, 0.12);
+      color: var(--copper);
+      font-size: 0.85rem;
+      font-weight: 600;
+      width: fit-content;
+    }
+
+    .facts {
+      margin: 0;
+      padding-inline-start: 18px;
+      color: #4a433c;
+    }
+
+    .btn-secondary {
+      margin-top: 6px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(27, 26, 23, 0.2);
+      background: rgba(255, 255, 255, 0.7);
+      font-weight: 600;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .back { font-weight: 600; }
+  </style>
+
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a class="back" href="maroc-real-estate-nl.html">Terug naar overzicht</a>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <div class="pill">Project</div>
+        <h1>Achakar Gardens</h1>
+        <p>Luxe villa’s op 2 minuten van het strand</p>
+        <p>Prestigieuze villa’s in Achakar, Tanger, vanaf 3.700.000 MAD. Moderne architectuur, privacy en een levensstijl aan zee.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Achakar Gardens" />
+    </section>
+
+    <section class="card">
+      <div class="lists" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+        <div>
+          <h2 style="font-family:'Playfair Display',serif;">Belangrijkste feiten</h2>
+          <ul><li>Oppervlakte: 171–355 m²</li><li>Slaapkamers: 4</li><li>Badkamers: 3–5</li><li>Oplevering: 2027</li><li>Ligging: Achakar, Tanger</li></ul>
+        </div>
+        <div>
+          <h2 style="font-family:'Playfair Display',serif;">Highlights</h2>
+          <ul><li>Privé- en gemeenschappelijk zwembad</li><li>Ruime tuinen en terrassen</li><li>Privé fitnessruimte</li><li>Ondergrondse parking</li><li>2 minuten van Achakar Beach</li></ul>
+        </div>
+      </div>
+      <div class="source" style="font-size:0.9rem;color:#6b6259;">Bron: <a href="https://immoworld.ma/nl/apartment/achakar-gardens-villas-for-sale-tangier/" target="_blank" rel="noopener">https://immoworld.ma/nl/apartment/achakar-gardens-villas-for-sale-tangier/</a></div>
+    </section>
+  </main>
+</body>
+</html>

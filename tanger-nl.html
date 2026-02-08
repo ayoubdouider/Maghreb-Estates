@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="nl" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tanger | Atlas Coast Realty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --sand: #f7f1e6;
+      --clay: #c86b3c;
+      --copper: #b55a33;
+      --forest: #1f3b34;
+      --ink: #1b1a17;
+      --cream: #fffaf3;
+      --shadow: 0 20px 50px rgba(27, 26, 23, 0.12);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #fffaf0, #f3e6d3 55%, #efe0c8 100%);
+      color: var(--ink);
+      direction: ltr;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      padding: 20px 24px;
+      background: rgba(255, 250, 243, 0.92);
+      border-bottom: 1px solid rgba(27, 26, 23, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      align-items: center;
+      padding: 36px 0 18px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      margin-bottom: 10px;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+    }
+
+    .hero p { line-height: 1.7; }
+
+    .lang-switch {
+      display: inline-flex;
+      gap: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .lang-switch a {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(31, 59, 52, 0.08);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    .card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(200, 107, 60, 0.12);
+      color: var(--copper);
+      font-size: 0.85rem;
+      font-weight: 600;
+      width: fit-content;
+    }
+
+    .facts {
+      margin: 0;
+      padding-inline-start: 18px;
+      color: #4a433c;
+    }
+
+    .btn-secondary {
+      margin-top: 6px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(27, 26, 23, 0.2);
+      background: rgba(255, 255, 255, 0.7);
+      font-weight: 600;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .back { font-weight: 600; }
+  </style>
+
+</head>
+<body>
+  <header>
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+      <a class="back" href="maroc-real-estate-nl.html">Terug naar overzicht</a>
+      <div class="lang-switch">
+        <a href="tanger-nl.html">NL</a>
+        <a href="tanger-en.html">EN</a>
+        <a href="tanger-fr.html">FR</a>
+        <a href="tanger-ar.html">AR</a>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <h1>Projecten in Tanger</h1>
+        <p>Hoogwaardige woningen in de meest geliefde wijken van Tanger.</p>
+        <a class="btn-secondary" href="maroc-real-estate-nl.html#contact">Plan een bezichtiging</a>
+      </div>
+    </section>
+
+    <section class="grid">
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Achakar Gardens" />
+          <div class="card-body">
+            <div class="pill">Project</div>
+            <strong>Achakar Gardens</strong>
+            <p>Prestigieuze villa’s in Achakar, Tanger, vanaf 3.700.000 MAD. Moderne architectuur, privacy en een levensstijl aan zee.</p>
+            <ul class="facts"><li>Oppervlakte: 171–355 m²</li><li>Slaapkamers: 4</li><li>Badkamers: 3–5</li><li>Oplevering: 2027</li><li>Ligging: Achakar, Tanger</li></ul>
+            <a class="btn-secondary" href="project-achakar-gardens-nl.html">Bekijk project</a>
+          </div>
+        </article>
+        
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80" alt="Pinea Hills" />
+          <div class="card-body">
+            <div class="pill">Project</div>
+            <strong>Pinea Hills</strong>
+            <p>Exclusieve appartementen met privézwembad, Bulthaup-keuken en panoramisch zeezicht in Ghandouri.</p>
+            <ul class="facts"><li>Oppervlakte: 265–420 m²</li><li>Slaapkamers: 3–4</li><li>Bouwjaar: 2024</li><li>Ligging: Ghandouri, Tanger</li></ul>
+            <a class="btn-secondary" href="project-pinea-hills-nl.html">Bekijk project</a>
+          </div>
+        </article>
+        
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1600&q=80" alt="Tanja Alya" />
+          <div class="card-body">
+            <div class="pill">Project</div>
+            <strong>Tanja Alya</strong>
+            <p>Een nieuwe trendy wijk met luxe appartementen, boetieks en levendige voetgangersstraten met uitzicht op de Baai van Tanger.</p>
+            <ul class="facts"><li>Bouwjaar: 2024</li><li>Oplevering: 2026</li><li>Ligging: Tanja Waterfront, Marina Tanger</li></ul>
+            <a class="btn-secondary" href="project-tanja-alya-nl.html">Bekijk project</a>
+          </div>
+        </article>
+        
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-6xa-FLdKJco?auto=format&fit=crop&w=1600&q=80" alt="Paris Residence" />
+          <div class="card-body">
+            <div class="pill">Project</div>
+            <strong>Paris Residence</strong>
+            <p>Gelegen op Avenue Sidi Mohamed Ben Abdelah, op 5 minuten van Iberia en tegenover Pâtisserie Paris.</p>
+            <ul class="facts"><li>Oppervlakte: 59–131 m²</li><li>Slaapkamers: 1–3</li><li>Badkamers: 1–2</li><li>Liften: 2</li><li>Ondergrondse parking</li></ul>
+            <a class="btn-secondary" href="project-paris-residence-nl.html">Bekijk project</a>
+          </div>
+        </article>
+        
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-4ZeTJcaspAk?auto=format&fit=crop&w=1600&q=80" alt="Rivana Residence" />
+          <div class="card-body">
+            <div class="pill">Project</div>
+            <strong>Rivana Residence</strong>
+            <p>Studios, 2- en 3-slaapkamerappartementen en penthouses met luxe afwerking en 24/7 beveiliging.</p>
+            <ul class="facts"><li>Oppervlakte: 53–130 m²</li><li>Slaapkamers: 1–3</li><li>Badkamers: 1–2</li><li>Ligging: nabij Place des Nations</li></ul>
+            <a class="btn-secondary" href="project-rivana-residence-nl.html">Bekijk project</a>
+          </div>
+        </article>
+        
+    </section>
+  </main>
+</body>
+</html>
