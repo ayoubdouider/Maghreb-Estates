@@ -346,6 +346,31 @@
 
     .slider-dot.active { background: #fff; }
 
+  
+    .faq { background: #fff; border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; }
+    .faq-item {
+      width: 100%;
+      text-align: left;
+      background: #fff;
+      border: none;
+      padding: 14px 18px;
+      border-bottom: 1px solid #eef1f7;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .faq-panel {
+      display: none;
+      padding: 0 18px 16px;
+      color: #4b5563;
+      border-bottom: 1px solid #eef1f7;
+    }
+    .faq-item[aria-expanded="true"] + .faq-panel { display: block; }
+    .faq-icon { font-size: 18px; }
+    .faq-item[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+
   </style>
 </head>
 <body>
@@ -359,9 +384,9 @@
     <div class="wrap">
       <div class="logo">Atlas Coast Realty</div>
     <div class="nav-links">
-        <a href="#overview">Overview</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#nearby">Nearby</a>
+        <a href="#overview">Overzicht</a>
+        <a href="#gallery">Galerij</a>
+        <a href="#nearby">In de buurt</a>
         <a href="#faq">FAQ</a>
       </div>
     </div>
@@ -398,10 +423,10 @@
   <section id="overview" class="section">
     <div class="overview">
       <div>
-        <h2>Overview</h2>
+        <h2>Overzicht</h2>
         <p>Achakar Gardens is een prestigieus woonproject met moderne, luxe villa’s in een van de meest gezochte wijken van Tanger. De woningen combineren privacy, zee‑sfeer en hoogwaardige afwerking.</p>
         <p>De ligging vlak bij Achakar Beach, Cap Spartel en de Grotten van Hercules biedt natuur en rust met snelle toegang tot het centrum.</p>
-        <h3>Features</h3>
+        <h3>Kenmerken</h3>
         <ul>
           <li>Privé‑ en gemeenschappelijk zwembad</li>
           <li>Ruime tuinen en terrassen</li>
@@ -411,7 +436,7 @@
         </ul>
       </div>
       <div class="facts">
-        <header>Project Facts</header>
+        <header>Projectgegevens</header>
         <ul>
           <li><span>Slaapkamers</span><strong>4</strong></li>
           <li><span>Badkamers</span><strong>3–5</strong></li>
@@ -425,7 +450,7 @@
   </section>
 
   <section id="gallery" class="section">
-    <h2>Gallery</h2>
+    <h2>Galerij</h2>
     <div class="gallery-slider" data-gallery>
       <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-hero.png" alt="Gallery" />
       <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-01.png" alt="Gallery" />
@@ -460,7 +485,7 @@
   </section>
 
   <section id="nearby" class="section">
-    <h2>Nearby</h2>
+    <h2>In de buurt</h2>
     <div class="nearby">
       <div class="nearby-list">
         <div class="nearby-card">Achakar Beach · 2 min</div>
@@ -486,12 +511,39 @@
   </section>
 
   <section id="faq" class="section">
-    <h2>FAQs</h2>
+    <h2>Veelgestelde vragen</h2>
     <div class="faq">
-      <div class="faq-item"><span>Waar ligt Achakar Gardens precies?</span><span>+</span></div>
-      <div class="faq-item"><span>Wat is de opleverdatum?</span><span>+</span></div>
-      <div class="faq-item"><span>Welke woningtypes zijn beschikbaar?</span><span>+</span></div>
-      <div class="faq-item"><span>Is er een betalingsplan?</span><span>+</span></div>
+      <button class="faq-item" type="button" aria-expanded="false">
+        <span>Waar ligt Achakar Gardens precies?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-panel">
+        Achakar Gardens ligt in de wijk Achakar in Tanger, op enkele minuten van het strand en vlak bij Cap Spartel.
+      </div>
+
+      <button class="faq-item" type="button" aria-expanded="false">
+        <span>Wat is de opleverdatum?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-panel">
+        De geplande oplevering is 2027 (onder voorbehoud van werfplanning).
+      </div>
+
+      <button class="faq-item" type="button" aria-expanded="false">
+        <span>Welke woningtypes zijn beschikbaar?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-panel">
+        Het project bestaat uit luxe villa’s met 4 slaapkamers en ruime terrassen, in verschillende oppervlakteranges.
+      </div>
+
+      <button class="faq-item" type="button" aria-expanded="false">
+        <span>Is er een betalingsplan?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-panel">
+        Ja, er is een betalingsplan beschikbaar. Neem contact op voor de actuele voorwaarden en beschikbare units.
+      </div>
     </div>
   </section>
 
@@ -545,6 +597,13 @@
 
     const gallery = document.querySelector('[data-gallery]');
     if (gallery) rotate(gallery);
+
+    document.querySelectorAll(".faq-item").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", expanded ? "false" : "true");
+      });
+    });
 
     const modal = document.querySelector('[data-modal]');
     const openBtn = document.querySelector('[data-open-modal]');
