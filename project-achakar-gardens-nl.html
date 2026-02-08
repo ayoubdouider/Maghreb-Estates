@@ -6,149 +6,69 @@
   <title>Achakar Gardens | Atlas Coast Realty</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --sand: #f7f1e6;
-      --clay: #c86b3c;
-      --copper: #b55a33;
-      --forest: #1f3b34;
-      --ink: #1b1a17;
-      --cream: #fffaf3;
-      --shadow: 0 20px 50px rgba(27, 26, 23, 0.12);
-      --radius: 22px;
+      --navy: #0c1c3a;
+      --navy-700: #0b1630;
+      --gold: #c9a05a;
+      --sand: #f5f1ea;
+      --ink: #10131a;
+      --muted: #5c6472;
+      --card: #ffffff;
+      --shadow: 0 18px 50px rgba(13, 20, 37, 0.12);
+      --radius: 18px;
     }
 
     * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: "Manrope", "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #fffaf0, #f3e6d3 55%, #efe0c8 100%);
-      color: var(--ink);
-      direction: ltr;
-    }
-
+    body { margin: 0; font-family: "Manrope", sans-serif; color: var(--ink); background: #f4f6fb; }
     a { color: inherit; text-decoration: none; }
 
-    header {
-      padding: 20px 24px;
-      background: rgba(255, 250, 243, 0.92);
-      border-bottom: 1px solid rgba(27, 26, 23, 0.08);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px 70px;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      align-items: center;
-      padding: 40px 0 24px;
-    }
-
-    .hero img {
-      width: 100%;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      height: 320px;
-      object-fit: cover;
-    }
-
-    h1 { font-family: "Playfair Display", serif; margin-bottom: 10px; }
-    h2 { font-family: "Playfair Display", serif; margin: 0 0 14px; }
-
-    .pill {
-      display: inline-flex;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(200, 107, 60, 0.12);
-      color: var(--copper);
-      font-weight: 600;
+    .topbar {
+      background: var(--navy-700);
+      color: #fff;
       font-size: 0.85rem;
     }
-
-    .meta-grid {
-      margin-top: 16px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    .topbar .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
       gap: 12px;
     }
 
-    .meta-card {
+    .nav {
       background: #fff;
-      border-radius: 16px;
-      padding: 14px;
-      border: 1px solid rgba(27, 26, 23, 0.08);
+      border-bottom: 1px solid #e6e8ef;
     }
-
-    .section {
-      margin-top: 28px;
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: var(--shadow);
+    .nav .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
     }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+      letter-spacing: 0.4px;
+      color: var(--navy);
     }
+    .nav-links { display: flex; gap: 16px; font-weight: 600; color: #3b4252; }
 
-    ul { margin: 0; padding-inline-start: 18px; }
-
-    .back { font-weight: 600; }
-
-    .cta {
-      margin-top: 18px;
-      display: inline-flex;
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(27, 26, 23, 0.2);
-      background: rgba(255, 255, 255, 0.7);
-      font-weight: 600;
-    }
-
-    .source { font-size: 0.9rem; color: #6b6259; margin-top: 12px; }
-  
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-      background: #fff;
-    }
-
-  
-
-    .hero-slider {
+    .hero {
       position: relative;
-      width: 100%;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      height: 320px;
-      background: #f2e7d6;
+      color: #fff;
     }
-
-    .hero-slider img {
+    .hero-media {
+      position: relative;
+      height: 520px;
+      overflow: hidden;
+    }
+    .hero-media img {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -157,129 +77,255 @@
       opacity: 0;
       transition: opacity 0.6s ease;
     }
-
-    .hero-slider img.active {
-      opacity: 1;
+    .hero-media img.active { opacity: 1; }
+    .hero-media::after {
+      content: "";
       position: absolute;
-    }
-    .hero-slider img:first-child {
-      opacity: 1;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(9,18,35,0.75), rgba(9,18,35,0.2));
     }
 
-
-    .slider-dots {
+    .hero-content {
       position: absolute;
-      bottom: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
+      inset: 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.7fr);
+      gap: 24px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .hero-left {
       z-index: 2;
+      display: grid;
+      gap: 12px;
     }
+    .hero-left h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); margin: 0; }
+    .hero-left .pill {
+      display: inline-flex;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.2);
+      font-weight: 600;
+      width: fit-content;
+    }
+    .hero-left .meta { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.95rem; color: #e6e8ef; }
+    .hero-left .meta span { display: inline-flex; align-items: center; gap: 6px; }
 
-    .slider-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.6);
-      border: 1px solid rgba(0,0,0,0.1);
+    .hero-form {
+      z-index: 2;
+      background: #fff;
+      color: var(--ink);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 12px;
+    }
+    .hero-form h3 { margin: 0 0 8px; }
+    .hero-form input, .hero-form textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #e3e6ef;
+      font-family: inherit;
+    }
+    .hero-form button {
+      background: var(--navy);
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 999px;
+      font-weight: 600;
       cursor: pointer;
     }
 
-    .slider-dot.active { background: #fff; }
+    .tabs {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid #e6e8ef;
+      z-index: 5;
+    }
+    .tabs .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      gap: 20px;
+      font-weight: 600;
+      color: #3b4252;
+    }
 
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+    .section h2 { font-family: "Playfair Display", serif; margin-bottom: 16px; }
+
+    .overview { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: start; }
+    .facts { background: #fff; border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; }
+    .facts header { background: var(--navy); color: #fff; padding: 14px 18px; font-weight: 700; }
+    .facts ul { list-style: none; margin: 0; padding: 0; }
+    .facts li { display: flex; justify-content: space-between; padding: 12px 18px; border-bottom: 1px solid #eef1f7; }
+    .facts li span { color: var(--muted); }
+
+    .gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; }
+    .gallery img { width: 100%; height: 220px; object-fit: cover; border-radius: 16px; box-shadow: var(--shadow); }
+    .gallery .big { height: 460px; grid-row: span 2; }
+
+    .nearby { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .nearby-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+    .nearby-card { background: #fff; padding: 14px; border-radius: 14px; box-shadow: var(--shadow); font-size: 0.9rem; }
+    .map { background: #e9edf5; border-radius: 16px; min-height: 360px; box-shadow: var(--shadow); display: flex; align-items: center; justify-content: center; color: #6b7280; }
+
+    .faq { background: #fff; border-radius: 16px; box-shadow: var(--shadow); }
+    .faq-item { padding: 14px 18px; border-bottom: 1px solid #eef1f7; display: flex; justify-content: space-between; align-items: center; }
+
+    @media (max-width: 980px) {
+      .hero-content { grid-template-columns: 1fr; padding-top: 60px; }
+      .hero-form { max-width: 420px; }
+      .overview { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .gallery .big { grid-row: auto; height: 280px; }
+      .nearby { grid-template-columns: 1fr; }
+    }
   </style>
-
 </head>
 <body>
-  <header>
+  <div class="topbar">
     <div class="wrap">
-      <a class="back" href="maroc-real-estate-nl.html">Terug naar overzicht</a>
+      <div>Atlas Coast Realty · Tanger</div>
+      <div>NL · EN · FR · AR</div>
     </div>
-  </header>
-  <main class="wrap">
-    <section class="hero">
-      <div>
+  </div>
+  <div class="nav">
+    <div class="wrap">
+      <div class="logo">Atlas Coast Realty</div>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#nearby">Nearby</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-media" data-slider>
+      <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-hero.png" alt="Achakar Gardens" /><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-01.png" alt="Achakar Gardens" /><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-02.png" alt="Achakar Gardens" /><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-03.png" alt="Achakar Gardens" /><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-04.png" alt="Achakar Gardens" /><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-05.png" alt="Achakar Gardens" /><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-06.png" alt="Achakar Gardens" /><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-07.png" alt="Achakar Gardens" /><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-08.png" alt="Achakar Gardens" /><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-09.png" alt="Achakar Gardens" /><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-10.png" alt="Achakar Gardens" /><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-11.png" alt="Achakar Gardens" />
+    </div>
+    <div class="hero-content">
+      <div class="hero-left">
         <div class="pill">Project</div>
         <h1>Achakar Gardens</h1>
+        <div class="meta">
+          <span>Achakar, Tanger</span>
+          <span>Status: In aanbouw</span>
+          <span>Oplevering: 2027</span>
+        </div>
         <p>Luxe villa’s op 2 minuten van het strand van Achakar.</p>
-        <div class="meta-grid"><div class="meta-card"><strong>Status</strong><div>In aanbouw</div></div>
-<div class="meta-card"><strong>Oplevering</strong><div>2027</div></div>
-<div class="meta-card"><strong>Prijs vanaf</strong><div>3.700.000 MAD</div></div>
-<div class="meta-card"><strong>Oppervlakte</strong><div>171–355 m²</div></div>
-<div class="meta-card"><strong>Slaapkamers</strong><div>4</div></div>
-<div class="meta-card"><strong>Badkamers</strong><div>3–5</div></div>
-<div class="meta-card"><strong>Ligging</strong><div>Achakar, Tanger</div></div></div>
-        <a class="cta" href="maroc-real-estate-nl.html#contact">Plan een bezichtiging</a>
       </div>
-      <div class="hero-slider" data-slider>
-<img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-hero.png" alt="achakar-gardens" />
-<img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-01.png" alt="achakar-gardens" />
-<img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-02.png" alt="achakar-gardens" />
-<img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-03.png" alt="achakar-gardens" />
-<img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-04.png" alt="achakar-gardens" />
-<img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-05.png" alt="achakar-gardens" />
-<img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-06.png" alt="achakar-gardens" />
-<img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-07.png" alt="achakar-gardens" />
-<img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-08.png" alt="achakar-gardens" />
-<img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-09.png" alt="achakar-gardens" />
-<img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-10.png" alt="achakar-gardens" />
-<img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-11.png" alt="achakar-gardens" />
-  <div class="slider-dots">
-    <span class="slider-dot"></span>
-<span class="slider-dot"></span>
-<span class="slider-dot"></span>
-<span class="slider-dot"></span>
-<span class="slider-dot"></span>
-<span class="slider-dot"></span>
-<span class="slider-dot"></span>
-<span class="slider-dot"></span>
-<span class="slider-dot"></span>
-<span class="slider-dot"></span>
-<span class="slider-dot"></span>
-<span class="slider-dot"></span>
+      <form class="hero-form">
+        <h3>Neem contact op</h3>
+        <input placeholder="Voornaam" />
+        <input placeholder="Achternaam" />
+        <input placeholder="E-mail" />
+        <input placeholder="Telefoon" />
+        <textarea rows="3" placeholder="Bericht"></textarea>
+        <button type="button">Verstuur</button>
+      </form>
+    </div>
+  </section>
+
+  <div class="tabs">
+    <div class="wrap">
+      <a href="#overview">Overview</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#nearby">Nearby</a>
+      <a href="#faq">FAQ</a>
+    </div>
   </div>
-</div>
-</div>
-</div>
-    </section>
 
-    <section class="section">
-  <h2>Beschrijving</h2>
-  <p>Achakar Gardens is een prestigieus woonproject met moderne, luxe villa’s in een van de meest gezochte wijken van Tanger. De woningen combineren privacy, zee‑sfeer en hoogwaardige afwerking.</p><p>De ligging vlak bij Achakar Beach, Cap Spartel en de Grotten van Hercules biedt natuur en rust met snelle toegang tot het centrum.</p>
-</section>
-<section class="section">
-  <h2>Voorzieningen</h2>
-  <ul><li>Privé‑ en gemeenschappelijk zwembad</li><li>Ruime tuinen en terrassen</li><li>Speeltuin voor kinderen</li><li>Privé fitnessruimte</li><li>Ondergrondse parking</li></ul>
-</section>
-<section class="section">
-  <h2>Afwerking & materialen</h2>
-  <ul><li>Houten vloer en houten bekleding</li><li>Gipsen verlaagd plafond</li><li>Grijs marmer</li><li>Thermische en geluidsisolatie</li><li>Gecentraliseerde airconditioning</li><li>Sanitair Jacob Delafon</li><li>Dubbel glas</li></ul>
-</section>
-<section class="section">
-  <h2>Waarom investeren</h2>
-  <ul><li>Hoge verhuurpotentie door nabijheid van strand en toeristische zones</li><li>Luxe leefstijl in veilige, privéomgeving</li><li>Sterke waardestijging in groeiende wijk</li></ul>
-</section>
+  <section id="overview" class="section">
+    <div class="overview">
+      <div>
+        <h2>Overview</h2>
+        <p>Achakar Gardens is een prestigieus woonproject met moderne, luxe villa’s in een van de meest gezochte wijken van Tanger. De woningen combineren privacy, zee‑sfeer en hoogwaardige afwerking.</p>
+        <p>De ligging vlak bij Achakar Beach, Cap Spartel en de Grotten van Hercules biedt natuur en rust met snelle toegang tot het centrum.</p>
+        <h3>Features</h3>
+        <ul>
+          <li>Privé‑ en gemeenschappelijk zwembad</li>
+          <li>Ruime tuinen en terrassen</li>
+          <li>Speeltuin voor kinderen</li>
+          <li>Privé fitnessruimte</li>
+          <li>Ondergrondse parking</li>
+        </ul>
+      </div>
+      <div class="facts">
+        <header>Project Facts</header>
+        <ul>
+          <li><span>Slaapkamers</span><strong>4</strong></li>
+          <li><span>Badkamers</span><strong>3–5</strong></li>
+          <li><span>Oppervlakte</span><strong>171–355 m²</strong></li>
+          <li><span>Prijs vanaf</span><strong>3.700.000 MAD</strong></li>
+          <li><span>Status</span><strong>In aanbouw</strong></li>
+          <li><span>Oplevering</span><strong>2027</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
+  <section id="gallery" class="section">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img class="big" src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-01.png" alt="Gallery" />
+      <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-02.png" alt="Gallery" />
+      <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-03.png" alt="Gallery" />
+      <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-04.png" alt="Gallery" />
+      <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-gallery-05.png" alt="Gallery" />
+    </div>
+  </section>
 
-    <div class="source">Bron: <a href="https://immoworld.ma/nl/apartment/achakar-gardens-villas-for-sale-tangier/" target="_blank" rel="noopener">https://immoworld.ma/nl/apartment/achakar-gardens-villas-for-sale-tangier/</a></div>
-  </main>
+  <section id="nearby" class="section">
+    <h2>Nearby</h2>
+    <div class="nearby">
+      <div class="nearby-list">
+        <div class="nearby-card">Achakar Beach · 2 min</div>
+        <div class="nearby-card">Cap Spartel · 10 min</div>
+        <div class="nearby-card">Grotten van Hercules · 12 min</div>
+        <div class="nearby-card">Kasbah · 15 min</div>
+        <div class="nearby-card">Tanger Airport · 25 min</div>
+        <div class="nearby-card">Tanger Med · 50 min</div>
+      </div>
+      <div class="map">Kaart placeholder</div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <h2>FAQs</h2>
+    <div class="faq">
+      <div class="faq-item"><span>Waar ligt Achakar Gardens precies?</span><span>+</span></div>
+      <div class="faq-item"><span>Wat is de opleverdatum?</span><span>+</span></div>
+      <div class="faq-item"><span>Welke woningtypes zijn beschikbaar?</span><span>+</span></div>
+      <div class="faq-item"><span>Is er een betalingsplan?</span><span>+</span></div>
+    </div>
+  </section>
 
   <script>
-    document.querySelectorAll('[data-slider]').forEach((slider) => {
+    const slider = document.querySelector('[data-slider]');
+    if (slider) {
       const images = Array.from(slider.querySelectorAll('img'));
-      const dots = Array.from(slider.querySelectorAll('.slider-dot'));
       let idx = 0;
-      const show = (i) => {
-        images.forEach((img, j) => img.classList.toggle('active', j === i));
-        dots.forEach((dot, j) => dot.classList.toggle('active', j === i));
-        idx = i;
-      };
-      dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
-      setInterval(() => show((idx + 1) % images.length), 5000);
-      show(0);
-    });
+      images[0].classList.add('active');
+      setInterval(() => {
+        images[idx].classList.remove('active');
+        idx = (idx + 1) % images.length;
+        images[idx].classList.add('active');
+      }, 4000);
+    }
   </script>
-
 </body>
 </html>
