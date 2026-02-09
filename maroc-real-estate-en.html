@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
@@ -25,105 +24,219 @@
     body { margin: 0; font-family: "Manrope", sans-serif; color: var(--ink); background: #f4f6fb; }
     a { color: inherit; text-decoration: none; }
     .topbar { background: var(--navy-700); color: #fff; font-size: 0.85rem; }
-    .topbar .wrap { max-width: 1200px; margin: 0 auto; padding: 10px 20px; display: flex; justify-content: space-between; gap: 12px; }
+    .topbar .wrap { max-width: 1200px; margin: 0 auto; padding: 10px 20px; display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+    .lang-links { display: flex; gap: 10px; align-items: center; }
+    .lang-link { color: #dfe3f1; font-weight: 600; }
+    .lang-link.active { color: #fff; text-decoration: underline; }
     .nav { background: #fff; border-bottom: 1px solid #e6e8ef; position: sticky; top: 0; z-index: 10; }
     .nav .wrap { max-width: 1200px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
     .logo { font-family: "Playfair Display", serif; font-size: 20px; letter-spacing: 0.4px; color: var(--navy); }
     .nav-links { display: flex; gap: 16px; font-weight: 600; color: #3b4252; overflow-x: auto; scrollbar-width: none; }
     .nav-links::-webkit-scrollbar { display: none; }
+
     .hero { position: relative; color: #fff; }
     .hero-media { position: relative; height: 520px; overflow: hidden; }
-    .hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; }
+    .hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     .hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(9,18,35,0.75), rgba(9,18,35,0.2)); }
-    .hero-content { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.7fr); gap: 24px; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    .hero-left { z-index: 2; display: grid; gap: 12px; }
-    .hero-left h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); margin: 0; }
-    .hero-left .pill { display: inline-flex; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.2); font-weight: 600; width: fit-content; }
-    .hero-left .meta { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.95rem; color: #e6e8ef; }
-    .hero-form { z-index: 2; background: #fff; color: var(--ink); border-radius: 18px; padding: 20px; box-shadow: var(--shadow); display: grid; gap: 12px; }
-    .hero-form h3 { margin: 0 0 8px; }
-    .hero-form input, .hero-form textarea { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid #e3e6ef; font-family: inherit; }
-    .hero-form button { background: var(--navy); color: #fff; border: none; padding: 12px; border-radius: 999px; font-weight: 600; cursor: pointer; }
-    .hero-cta-mobile { display: none; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 999px; background: var(--navy); color: #fff; font-weight: 600; width: fit-content; }
-    .modal { position: fixed; inset: 0; background: rgba(8, 14, 28, 0.6); display: none; align-items: center; justify-content: center; padding: 20px; z-index: 100; }
-    .modal.open { display: flex; }
-    .modal-card { background: #fff; border-radius: 18px; padding: 18px; width: min(520px, 100%); box-shadow: var(--shadow); display: grid; gap: 12px; }
-    .modal-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-    .modal-close { border: none; background: #eef1f7; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-size: 18px; line-height: 1; }
+    .hero-content { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .hero-card { z-index: 2; max-width: 620px; display: grid; gap: 16px; }
+    .hero-card h1 { font-size: clamp(2.2rem, 4vw, 3.8rem); margin: 0; font-family: "Playfair Display", serif; }
+    .hero-card p { margin: 0; font-size: 1.05rem; color: #e6e8ef; }
+    .hero-card .cta { display: inline-flex; padding: 12px 22px; border-radius: 999px; background: #fff; color: var(--navy); font-weight: 700; width: fit-content; }
+
     .section { max-width: 1200px; margin: 0 auto; padding: 48px 20px; }
-    .section h2 { font-family: "Playfair Display", serif; margin-bottom: 16px; }
-    .overview { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: start; }
-    .facts { background: #fff; border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; }
-    .facts header { background: var(--navy); color: #fff; padding: 14px 18px; font-weight: 700; }
-    .facts ul { list-style: none; margin: 0; padding: 0; }
-    .facts li { display: flex; justify-content: space-between; padding: 12px 18px; border-bottom: 1px solid #eef1f7; }
-    .facts li span { color: var(--muted); }
-    .gallery-slider { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); height: 420px; background: #e9edf5; }
-    .gallery-slider img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.6s ease; }
-    .gallery-slider img.active { opacity: 1; }
-    .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 50%; border: none; background: rgba(12, 28, 58, 0.75); color: #fff; font-size: 20px; cursor: pointer; display: grid; place-items: center; z-index: 3; }
-    .slider-btn.prev { left: 14px; }
-    .slider-btn.next { right: 14px; }
-    .slider-btn.fullscreen { top: 18px; right: 18px; transform: none; font-size: 16px; width: 36px; height: 36px; }
-    .slider-dots { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 2; }
-    .slider-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.1); cursor: pointer; }
-    .slider-dot.active { background: #fff; }
-    .nearby { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .nearby-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
-    .nearby-card { background: #fff; padding: 14px; border-radius: 14px; box-shadow: var(--shadow); font-size: 0.9rem; }
-    .map { background: #e9edf5; border-radius: 16px; min-height: 360px; box-shadow: var(--shadow); overflow: hidden; }
-    .map iframe { width: 100%; height: 100%; border: 0; border-radius: 16px; }
-    .faq { background: #fff; border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; }
-    .faq-item { width: 100%; text-align: left; background: #fff; border: none; padding: 14px 18px; border-bottom: 1px solid #eef1f7; display: flex; justify-content: space-between; align-items: center; font-weight: 600; cursor: pointer; }
-    .faq-panel { display: none; padding: 0 18px 16px; color: #4b5563; border-bottom: 1px solid #eef1f7; }
-    .faq-item[aria-expanded="true"] + .faq-panel { display: block; }
-    .faq-icon { font-size: 18px; }
-    .faq-item[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
-    .city-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-    .city-card { background: #fff; border-radius: 16px; padding: 18px; box-shadow: var(--shadow); display: grid; gap: 10px; }
-    .city-card h3 { margin: 0; }
-    .city-card a { font-weight: 600; color: var(--navy); }
+    .section h2 { font-family: "Playfair Display", serif; margin-bottom: 10px; }
+
+    .city-tabs { display: flex; gap: 18px; border-bottom: 2px solid #e3e6ef; margin-bottom: 24px; overflow-x: auto; }
+    .city-tab { background: transparent; border: none; padding: 10px 4px 14px; font-weight: 700; color: #4b5563; cursor: pointer; border-bottom: 3px solid transparent; font-size: 1rem; white-space: nowrap; }
+    .city-tab[aria-selected="true"] { color: var(--navy); border-bottom-color: var(--navy); }
+
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .project-card { position: relative; border-radius: 16px; overflow: hidden; min-height: 220px; box-shadow: var(--shadow); background: #dfe3ef; }
+    .project-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .project-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,12,23,0.05), rgba(7,12,23,0.7)); }
+    .project-card-overlay { position: absolute; inset: auto 0 0 0; padding: 16px; color: #fff; z-index: 2; display: grid; gap: 6px; }
+    .project-card-overlay span { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: #d9dde8; }
+    .project-card-overlay h3 { margin: 0; font-size: 1.1rem; }
+
     @media (max-width: 980px) {
-      .hero-content { grid-template-columns: 1fr; padding-top: 60px; }
-      .hero-form { max-width: 420px; }
-      .overview { grid-template-columns: 1fr; }
-      .nearby { grid-template-columns: 1fr; }
+      .hero-content { padding-top: 60px; }
     }
     @media (max-width: 720px) {
       .nav .wrap { flex-direction: column; align-items: flex-start; }
       .nav-links { flex-wrap: wrap; gap: 10px; padding-bottom: 6px; }
       .hero-media { height: 420px; }
-      .hero { background: #f4f6fb; }
       .hero-content { position: static; padding: 24px 20px 0; }
-      .hero-left { color: var(--ink); }
-      .hero-left .pill { background: #e8ecf6; color: var(--navy); }
-      .hero-left .meta { font-size: 0.85rem; color: #5c6472; }
-      .hero-form { display: none; }
-      .hero-cta-mobile { display: inline-flex; }
+      .hero-card { color: var(--ink); }
+      .hero-card p { color: #4b5563; }
+      .hero-media::after { background: linear-gradient(120deg, rgba(9,18,35,0.25), rgba(9,18,35,0.1)); }
       .section { padding: 36px 20px; }
-      .facts li { flex-direction: column; align-items: flex-start; gap: 6px; }
-      .gallery-slider { height: 280px; }
-      .slider-btn.prev { left: 8px; }
-      .slider-btn.next { right: 8px; }
-      .slider-btn.fullscreen { right: 10px; top: 10px; }
-      .nearby-list { grid-template-columns: 1fr; }
     }
     @media (max-width: 520px) {
       .hero-media { height: 340px; }
-      .hero-left h1 { font-size: 2rem; }
-      .hero-form { padding: 16px; }
-      .gallery-slider { height: 240px; }
+      .hero-card h1 { font-size: 2rem; }
     }
   </style>
 
 </head>
 <body>
-  <div class="topbar"><div class="wrap"><div>Atlas Coast Realty · Tangier</div><div>NL · EN · FR · AR</div></div></div>
+  <div class="topbar"><div class="wrap"><div>Atlas Coast Realty · Morocco</div><div class="lang-links"><a href="maroc-real-estate-nl.html" class="lang-link">NL</a><a href="maroc-real-estate-en.html" class="lang-link active">EN</a><a href="maroc-real-estate-fr.html" class="lang-link">FR</a><a href="maroc-real-estate-ar.html" class="lang-link">AR</a></div></div></div>
   <div class="nav"><div class="wrap"><div class="logo">Atlas Coast Realty</div><div class="nav-links"><a href="city-tanger-en.html">Tangier</a><a href="city-rabat-en.html">Rabat</a><a href="city-casablanca-en.html">Casablanca</a><a href="city-marrakesh-en.html">Marrakesh</a></div></div></div>
-  <section class="section">
-    <h2>Atlas Coast Realty</h2>
-    <p>Projects and real estate in Morocco, curated with local expertise.</p>
-    <div class="city-grid"><div class="city-card"><h3>Tangier</h3><p>Choose a city to explore its projects.</p><a href="city-tanger-en.html">View projects</a></div><div class="city-card"><h3>Rabat</h3><p>Choose a city to explore its projects.</p><a href="city-rabat-en.html">View projects</a></div><div class="city-card"><h3>Casablanca</h3><p>Choose a city to explore its projects.</p><a href="city-casablanca-en.html">View projects</a></div><div class="city-card"><h3>Marrakesh</h3><p>Choose a city to explore its projects.</p><a href="city-marrakesh-en.html">View projects</a></div></div>
+
+  <section class="hero">
+    <div class="hero-media"><img src="https://cdn.pixabay.com/photo/2017/10/24/16/19/tangier-2885105_1280.jpg" alt="Real Estate in Morocco" /></div>
+    <div class="hero-content">
+      <div class="hero-card">
+        <h1>Real Estate in Morocco</h1>
+        <p>Explore carefully selected projects across Morocco’s leading cities.</p>
+        <a class="cta" href="#projects">View projects</a>
+      </div>
+    </div>
   </section>
+
+  <section class="section" id="projects">
+    <h2>Projects by city</h2>
+    <p>Select a city to browse all projects.</p>
+    <div class="city-tabs" role="tablist"><button class="city-tab" data-city="tanger" aria-selected="true">Tangier</button><button class="city-tab" data-city="rabat" aria-selected="false">Rabat</button><button class="city-tab" data-city="casablanca" aria-selected="false">Casablanca</button><button class="city-tab" data-city="marrakesh" aria-selected="false">Marrakesh</button></div>
+    <div class="project-grid">
+            <a class="project-card" href="project-achakar-gardens-en.html" data-city="tanger">
+              <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/achakar-gardens/achakar-gardens-hero.png" alt="Achakar Gardens" loading="lazy" />
+              <div class="project-card-overlay">
+                <span>Tangier</span>
+                <h3>Achakar Gardens</h3>
+              </div>
+            </a>
+                
+
+            <a class="project-card" href="project-pinea-hills-en.html" data-city="tanger">
+              <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/pinea-hills/pinea-hills-hero.png" alt="Pinea Hills" loading="lazy" />
+              <div class="project-card-overlay">
+                <span>Tangier</span>
+                <h3>Pinea Hills</h3>
+              </div>
+            </a>
+                
+
+            <a class="project-card" href="project-tanja-alya-en.html" data-city="tanger">
+              <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/tanja-alya/tanja-alya-hero.png" alt="Marina View (Tanja Alya)" loading="lazy" />
+              <div class="project-card-overlay">
+                <span>Tangier</span>
+                <h3>Marina View (Tanja Alya)</h3>
+              </div>
+            </a>
+                
+
+            <a class="project-card" href="project-paris-residence-en.html" data-city="tanger">
+              <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/paris-residence/paris-residence-hero.png" alt="Paris Residence" loading="lazy" />
+              <div class="project-card-overlay">
+                <span>Tangier</span>
+                <h3>Paris Residence</h3>
+              </div>
+            </a>
+                
+
+            <a class="project-card" href="project-rivana-residence-en.html" data-city="tanger">
+              <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/rivana-residence/rivana-residence-hero.png" alt="Residence Rivana" loading="lazy" />
+              <div class="project-card-overlay">
+                <span>Tangier</span>
+                <h3>Residence Rivana</h3>
+              </div>
+            </a>
+                
+
+            <a class="project-card" href="project-patio-verde-en.html" data-city="rabat">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Ryad Al Andalous – Patio Verde" loading="lazy" />
+              <div class="project-card-overlay">
+                <span>Rabat</span>
+                <h3>Ryad Al Andalous – Patio Verde</h3>
+              </div>
+            </a>
+                
+
+            <a class="project-card" href="project-residences-du-lac-prestigia-en.html" data-city="rabat">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Les Résidences du Lac (Prestigia)" loading="lazy" />
+              <div class="project-card-overlay">
+                <span>Rabat</span>
+                <h3>Les Résidences du Lac (Prestigia)</h3>
+              </div>
+            </a>
+                
+
+            <a class="project-card" href="project-residences-du-lac-avito-en.html" data-city="rabat">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Ryad Al Andalous – Les Résidences du Lac" loading="lazy" />
+              <div class="project-card-overlay">
+                <span>Rabat</span>
+                <h3>Ryad Al Andalous – Les Résidences du Lac</h3>
+              </div>
+            </a>
+                
+
+            <a class="project-card" href="city-casablanca-en.html" data-city="casablanca">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Casablanca Project 01" loading="lazy" />
+              <div class="project-card-overlay">
+                <span>Casablanca</span>
+                <h3>Casablanca Project 01</h3>
+              </div>
+            </a>
+                
+
+            <a class="project-card" href="city-casablanca-en.html" data-city="casablanca">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Casablanca Project 02" loading="lazy" />
+              <div class="project-card-overlay">
+                <span>Casablanca</span>
+                <h3>Casablanca Project 02</h3>
+              </div>
+            </a>
+                
+
+            <a class="project-card" href="city-casablanca-en.html" data-city="casablanca">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Casablanca Project 03" loading="lazy" />
+              <div class="project-card-overlay">
+                <span>Casablanca</span>
+                <h3>Casablanca Project 03</h3>
+              </div>
+            </a>
+                
+
+            <a class="project-card" href="city-marrakesh-en.html" data-city="marrakesh">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Marrakesh Project 01" loading="lazy" />
+              <div class="project-card-overlay">
+                <span>Marrakesh</span>
+                <h3>Marrakesh Project 01</h3>
+              </div>
+            </a>
+                
+
+            <a class="project-card" href="city-marrakesh-en.html" data-city="marrakesh">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Marrakesh Project 02" loading="lazy" />
+              <div class="project-card-overlay">
+                <span>Marrakesh</span>
+                <h3>Marrakesh Project 02</h3>
+              </div>
+            </a>
+                
+
+            <a class="project-card" href="city-marrakesh-en.html" data-city="marrakesh">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Marrakesh Project 03" loading="lazy" />
+              <div class="project-card-overlay">
+                <span>Marrakesh</span>
+                <h3>Marrakesh Project 03</h3>
+              </div>
+            </a>
+                </div>
+  </section>
+
+  <script>
+    const tabs = document.querySelectorAll('.city-tab');
+    const cards = document.querySelectorAll('.project-card');
+    const setCity = (city) => {
+      tabs.forEach(t => t.setAttribute('aria-selected', t.dataset.city === city ? 'true' : 'false'));
+      cards.forEach(card => {
+        card.style.display = card.dataset.city === city ? 'block' : 'none';
+      });
+    };
+    tabs.forEach(tab => tab.addEventListener('click', () => setCity(tab.dataset.city)));
+    setCity('tanger');
+  </script>
 </body>
 </html>
