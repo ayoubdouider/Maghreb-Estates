@@ -1,424 +1,162 @@
 <!doctype html>
 <html lang="nl" dir="ltr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Maghreb Estates</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Maghreb Estates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
 
-  <style>
-    :root {
-      --navy: #0c1c3a;
-      --navy-700: #0b1630;
-      --gold: #c9a05a;
-      --sand: #f5f1ea;
-      --ink: #10131a;
-      --muted: #5c6472;
-      --card: #ffffff;
-      --shadow: 0 18px 50px rgba(13, 20, 37, 0.12);
-      --radius: 18px;
-    }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: "Manrope", sans-serif; color: var(--ink); background: #f4f6fb; }
-    a { color: inherit; text-decoration: none; }
-    .topbar { background: var(--navy-700); color: #fff; font-size: 0.85rem; }
-    .topbar .wrap { max-width: 1200px; margin: 0 auto; padding: 10px 20px; display: flex; justify-content: space-between; gap: 12px; align-items: center; }
-    .lang-links { display: flex; gap: 10px; align-items: center; }
-    .lang-link { color: #dfe3f1; font-weight: 600; }
-    .lang-link.active { color: #fff; text-decoration: underline; }
-    .nav { background: #fff; border-bottom: 1px solid #e6e8ef; position: sticky; top: 0; z-index: 10; }
-    .nav .wrap { max-width: 1200px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
-    .logo { font-family: "Playfair Display", serif; font-size: 20px; letter-spacing: 0.4px; color: var(--navy); }
-    .nav-links { display: flex; gap: 16px; font-weight: 600; color: #3b4252; overflow-x: auto; scrollbar-width: none; }
-    .nav-links::-webkit-scrollbar { display: none; }
+    :root { --navy:#0c1c3a; --navy-700:#0b1630; --ink:#10131a; --muted:#5c6472; --shadow:0 18px 50px rgba(13,20,37,.12); --radius:18px; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Manrope",sans-serif; color:var(--ink); background:#f4f6fb; }
+    a { color:inherit; text-decoration:none; }
+    .topbar { background:var(--navy-700); color:#fff; font-size:.85rem; }
+    .topbar .wrap { max-width:1200px; margin:0 auto; padding:10px 20px; display:flex; justify-content:space-between; gap:12px; align-items:center; }
+    .lang-links { display:flex; gap:10px; }
+    .lang-link { color:#dfe3f1; font-weight:600; }
+    .lang-link.active { color:#fff; text-decoration:underline; }
+    .nav { background:#fff; border-bottom:1px solid #e6e8ef; position:sticky; top:0; z-index:10; }
+    .nav .wrap { max-width:1200px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .logo { font-family:"Playfair Display",serif; font-size:20px; letter-spacing:.4px; color:var(--navy); }
+    .nav-links { display:flex; gap:16px; font-weight:600; color:#3b4252; overflow-x:auto; scrollbar-width:none; }
+    .nav-links::-webkit-scrollbar { display:none; }
+    .site-footer { background:var(--navy-700); color:#dfe3f1; padding:48px 20px 24px; margin-top:48px; }
+    .footer-wrap { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.2fr 1fr 1.2fr; gap:24px; }
+    .footer-logo { font-family:"Playfair Display",serif; font-size:22px; color:#fff; }
+    .footer-column h4 { margin:0 0 12px; color:#fff; font-size:1rem; }
+    .footer-column ul { list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+    .footer-column a { color:#dfe3f1; }
+    .footer-bottom { max-width:1200px; margin:32px auto 0; padding-top:16px; border-top:1px solid rgba(255,255,255,.15); font-size:.85rem; }
+    @media (max-width:980px) { .footer-wrap { grid-template-columns:1fr; } }
 
-    .hero { position: relative; color: #fff; }
-    .hero-media { position: relative; height: 520px; overflow: hidden; }
-    .hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(9,18,35,0.75), rgba(9,18,35,0.2)); }
-    .hero-content { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    .hero-card { z-index: 2; max-width: 620px; display: grid; gap: 16px; }
-    .hero-card h1 { font-size: clamp(2.2rem, 4vw, 3.8rem); margin: 0; font-family: "Playfair Display", serif; }
-    .hero-card p { margin: 0; font-size: 1.05rem; color: #e6e8ef; }
-    .hero-card .cta { display: inline-flex; padding: 12px 22px; border-radius: 999px; background: #fff; color: var(--navy); font-weight: 700; width: fit-content; }
-
-    .section { max-width: 1200px; margin: 0 auto; padding: 48px 20px; }
-    .section h2 { font-family: "Playfair Display", serif; margin-bottom: 10px; }
-
-    .city-tabs { display: flex; gap: 18px; border-bottom: 2px solid #e3e6ef; margin-bottom: 24px; overflow-x: auto; }
-    .city-tab { background: transparent; border: none; padding: 10px 4px 14px; font-weight: 700; color: #4b5563; cursor: pointer; border-bottom: 3px solid transparent; font-size: 1rem; white-space: nowrap; }
-    .city-tab[aria-selected="true"] { color: var(--navy); border-bottom-color: var(--navy); }
-
-    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-    .project-card { position: relative; border-radius: 16px; overflow: hidden; min-height: 220px; box-shadow: var(--shadow); background: #dfe3ef; }
-    .project-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .project-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,12,23,0.05), rgba(7,12,23,0.7)); }
-    .project-card-overlay { position: absolute; inset: auto 0 0 0; padding: 16px; color: #fff; z-index: 2; display: grid; gap: 6px; }
-    .project-card-overlay span { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: #d9dde8; }
-    .project-card-overlay h3 { margin: 0; font-size: 1.1rem; }
-
-    @media (max-width: 980px) {
-      .hero-content { padding-top: 60px; }
-    }
-    @media (max-width: 720px) {
-      .nav .wrap { flex-direction: column; align-items: flex-start; }
-      .nav-links { flex-wrap: wrap; gap: 10px; padding-bottom: 6px; }
-      .hero-media { height: 420px; }
-      .hero-content { position: static; padding: 24px 20px 0; }
-      .hero-card { color: var(--ink); }
-      .hero-card p { color: #4b5563; }
-      .hero-media::after { background: linear-gradient(120deg, rgba(9,18,35,0.25), rgba(9,18,35,0.1)); }
-      .section { padding: 36px 20px; }
-    }
-    @media (max-width: 520px) {
-      .hero-media { height: 340px; }
-      .hero-card h1 { font-size: 2rem; }
-    }
-  
-    .contact-section { max-width: 1200px; margin: 0 auto; padding: 48px 20px; }
-    .contact-card { background: #fff; border-radius: 20px; box-shadow: var(--shadow); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); overflow: hidden; }
-    .contact-media { position: relative; min-height: 260px; background: linear-gradient(140deg, rgba(12,28,58,0.8), rgba(12,28,58,0.2)), url('https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; color: #fff; padding: 32px; display: grid; align-content: end; }
-    .contact-media h3 { margin: 0 0 8px; font-family: "Playfair Display", serif; font-size: 1.6rem; }
-    .contact-media p { margin: 0; color: #e6e8ef; }
-    .contact-form { padding: 32px; display: grid; gap: 12px; }
-    .contact-form .row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    .contact-form input, .contact-form textarea { width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid #e3e6ef; font-family: inherit; }
-    .contact-form button { background: var(--navy); color: #fff; border: none; padding: 12px; border-radius: 999px; font-weight: 600; cursor: pointer; }
-
-    .brochure-section { max-width: 1200px; margin: 0 auto; padding: 0 20px 48px; }
-    .brochure-card { background: #fff; border-radius: 20px; box-shadow: var(--shadow); display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 20px; align-items: center; padding: 28px; }
-    .brochure-card img { width: 100%; max-width: 360px; justify-self: end; }
-    .brochure-kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; color: #8b93a6; }
-    .brochure-card h3 { margin: 8px 0; font-family: "Playfair Display", serif; }
-    .brochure-card p { margin: 0 0 16px; color: var(--muted); }
-    .brochure-card a { display: inline-flex; padding: 12px 22px; border-radius: 999px; background: #d04a02; color: #fff; font-weight: 700; width: fit-content; }
-
-    .site-footer { background: var(--navy-700); color: #dfe3f1; padding: 48px 20px 24px; }
-    .footer-wrap { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr 1.2fr; gap: 24px; }
-    .footer-logo { font-family: "Playfair Display", serif; font-size: 22px; color: #fff; }
-    .footer-column h4 { margin: 0 0 12px; color: #fff; font-size: 1rem; }
-    .footer-column ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-    .footer-column a { color: #dfe3f1; }
-    .footer-bottom { max-width: 1200px; margin: 32px auto 0; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-
-    [dir="rtl"] .contact-card, [dir="rtl"] .brochure-card, [dir="rtl"] .footer-wrap { direction: rtl; }
-    [dir="rtl"] .contact-form .row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    [dir="rtl"] .footer-bottom { flex-direction: row-reverse; }
-
-    @media (max-width: 980px) {
-      .contact-card { grid-template-columns: 1fr; }
-      .brochure-card { grid-template-columns: 1fr; text-align: center; }
-      .brochure-card img { justify-self: center; }
-      .footer-wrap { grid-template-columns: 1.2fr 1fr 1.2fr; }
-    }
-    @media (max-width: 720px) {
-      .contact-form .row { grid-template-columns: 1fr; }
-      .brochure-card { padding: 20px; }
-      .footer-wrap { grid-template-columns: 1.2fr 1fr 1.2fr; }
-      .footer-bottom { justify-content: center; text-align: center; }
-    }
-
-  
-    .coming-section { max-width: 1200px; margin: 0 auto; padding: 0 20px 48px; }
-    .coming-card { background: #f0f1f4; border: 1px solid #e3e6ef; border-radius: 20px; padding: 28px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 20px; align-items: center; }
-    .coming-card h3 { margin: 8px 0; font-family: "Playfair Display", serif; }
-    .coming-card p { margin: 0; color: var(--muted); }
-    .coming-card .badge { display: inline-flex; padding: 6px 12px; border-radius: 999px; background: #d9dce3; color: #4b5563; font-weight: 600; width: fit-content; }
-    .coming-card .cta { display: inline-flex; padding: 12px 22px; border-radius: 999px; background: #b7bcc8; color: #ffffff; font-weight: 700; width: fit-content; }
-    @media (max-width: 980px) {
-      .coming-card { grid-template-columns: 1fr; text-align: center; }
-      .coming-card .badge, .coming-card .cta { margin: 0 auto; }
-    }
-
-  
-    .project-slider { position: relative; }
-    .project-viewport { overflow: hidden; }
-    .project-track { display: flex; gap: 20px; transition: transform 0.4s ease; will-change: transform; }
-    .project-card { flex: 0 0 calc((100% - 40px) / 3); }
-    .slider-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 50%; border: none; background: rgba(12,28,58,0.85); color: #fff; font-size: 20px; cursor: pointer; display: grid; place-items: center; z-index: 2; }
-    .slider-arrow.prev { left: -10px; }
-    .slider-arrow.next { right: -10px; }
-    @media (max-width: 980px) {
-      .project-card { flex: 0 0 calc((100% - 20px) / 2); }
-    }
-    @media (max-width: 720px) {
-      .project-card { flex: 0 0 100%; }
-      .slider-arrow { top: auto; bottom: -56px; transform: none; }
-      .slider-arrow.prev { left: 0; }
-      .slider-arrow.next { right: 0; }
-    }
-
-  </style>
-
+.hero{position:relative;color:#fff} .hero-media{height:520px;position:relative;overflow:hidden} .hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(9,18,35,.75),rgba(9,18,35,.2))}
+.hero-content{position:absolute;inset:0;max-width:1200px;margin:0 auto;padding:0 20px;display:grid;align-items:center}
+.hero-card h1{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,4vw,3.8rem);margin:0} .hero-card p{color:#e6e8ef}
+.hero-card .cta{display:inline-flex;padding:12px 22px;border-radius:999px;background:#fff;color:var(--navy);font-weight:700}
+.section{max-width:1200px;margin:0 auto;padding:48px 20px} .section h2{font-family:"Playfair Display",serif}
+.city-tabs{display:flex;gap:18px;border-bottom:2px solid #e3e6ef;margin-bottom:24px;overflow-x:auto}
+.city-tab{background:transparent;border:none;padding:10px 4px 14px;font-weight:700;color:#4b5563;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+.city-tab[aria-selected="true"]{color:var(--navy);border-bottom-color:var(--navy)}
+.project-slider{position:relative} .project-viewport{overflow:hidden} .project-track{display:flex;gap:20px;transition:transform .35s ease}
+.project-card{position:relative;border-radius:16px;overflow:hidden;min-height:220px;box-shadow:var(--shadow);background:#dfe3ef;flex:0 0 calc((100% - 40px)/3)}
+.project-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover} .project-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,12,23,.05),rgba(7,12,23,.7))}
+.project-card-overlay{position:absolute;inset:auto 0 0 0;padding:16px;color:#fff;z-index:2} .project-card-overlay span{font-size:.85rem;letter-spacing:.08em}
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:none;background:rgba(12,28,58,.85);color:#fff;font-size:20px;cursor:pointer;z-index:2}
+.slider-arrow.prev{left:-10px} .slider-arrow.next{right:-10px}
+.contact-section{max-width:1200px;margin:0 auto;padding:48px 20px} .contact-card{background:#fff;border-radius:20px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.contact-media{min-height:260px;background:linear-gradient(140deg,rgba(12,28,58,.8),rgba(12,28,58,.2)),url('https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;color:#fff;padding:32px;display:grid;align-content:end}
+.contact-form{padding:32px;display:grid;gap:12px} .contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.contact-form input,.contact-form textarea{padding:12px 14px;border-radius:12px;border:1px solid #e3e6ef;font-family:inherit} .contact-form button{background:var(--navy);color:#fff;border:none;padding:12px;border-radius:999px}
+.brochure-section,.coming-section{max-width:1200px;margin:0 auto;padding:0 20px 48px}
+.brochure-card,.coming-card{background:#fff;border-radius:20px;box-shadow:var(--shadow);display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center;padding:28px}
+.brochure-card img{width:100%;max-width:360px;justify-self:end}
+.brochure-kicker{text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;color:#8b93a6} .brochure-card h3,.coming-card h3{font-family:"Playfair Display",serif;margin:8px 0}
+.brochure-card p,.coming-card p{color:var(--muted)} .brochure-card a{display:inline-flex;padding:12px 22px;border-radius:999px;background:#d04a02;color:#fff;font-weight:700}
+.coming-card{background:#f0f1f4;border:1px solid #e3e6ef} .coming-card .badge,.coming-card .cta{display:inline-flex;padding:6px 12px;border-radius:999px;background:#d9dce3;color:#4b5563;font-weight:600}
+@media (max-width:980px){.project-card{flex:0 0 calc((100% - 20px)/2)} .contact-card,.brochure-card,.coming-card{grid-template-columns:1fr}}
+@media (max-width:720px){.nav .wrap{flex-direction:column;align-items:flex-start} .hero-media{height:420px} .hero-content{position:static;padding:24px 20px 0} .hero-card{color:var(--ink)} .hero-card p{color:#4b5563}
+.project-card{flex:0 0 100%} .slider-arrow{top:auto;bottom:-56px;transform:none} .slider-arrow.prev{left:0} .slider-arrow.next{right:0} .contact-form .row{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <div class="topbar"><div class="wrap"><div>Maghreb Estates · Marokko</div><div class="lang-links"><a href="maroc-real-estate-nl.html" class="lang-link active">NL</a><a href="maroc-real-estate-en.html" class="lang-link">EN</a><a href="maroc-real-estate-fr.html" class="lang-link">FR</a><a href="maroc-real-estate-ar.html" class="lang-link">AR</a></div></div></div>
-  <div class="nav"><div class="wrap"><a class="logo" href="index.html">Maghreb Estates</a><div class="nav-links"><a href="city-tanger-nl.html">Tanger</a><a href="city-rabat-nl.html">Rabat</a><a href="city-casablanca-nl.html">Casablanca</a><a href="city-marrakesh-nl.html">Marrakesh</a></div></div></div>
-
-  <section class="hero">
-    <div class="hero-media"><img src="https://cdn.pixabay.com/photo/2017/10/24/16/19/tangier-2885105_1280.jpg" alt="Vastgoed in Marokko" /></div>
-    <div class="hero-content">
-      <div class="hero-card">
-        <h1>Vastgoed in Marokko</h1>
-        <p>Ontdek zorgvuldig geselecteerde projecten in de grootste steden van Marokko.</p>
-        <a class="cta" href="#projects">Bekijk projecten</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="projects">
-    <h2>Projecten per stad</h2>
-    <p>Selecteer een stad om alle projecten te bekijken.</p>
-    <div class="city-tabs" role="tablist"><button class="city-tab" data-city="tanger" aria-selected="true">Tanger</button><button class="city-tab" data-city="rabat" aria-selected="false">Rabat</button><button class="city-tab" data-city="casablanca" aria-selected="false">Casablanca</button><button class="city-tab" data-city="marrakesh" aria-selected="false">Marrakesh</button></div>
-    <div class="project-slider"><button class="slider-arrow prev" aria-label="Previous">&#10094;</button><button class="slider-arrow next" aria-label="Next">&#10095;</button><div class="project-viewport"><div class="project-track">
-            <a class="project-card" href="project-achakar-gardens-nl.html" data-city="tanger">
-              <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/tanger/achakar-gardens/achakar-gardens-hero.png" alt="Achakar Gardens" loading="lazy" />
-              <div class="project-card-overlay">
-                <span>Tanger</span>
-                <h3>Achakar Gardens</h3>
-              </div>
-            </a>
-                
-
-            <a class="project-card" href="project-pinea-hills-nl.html" data-city="tanger">
-              <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/tanger/pinea-hills/pinea-hills-hero.png" alt="Pinea Hills" loading="lazy" />
-              <div class="project-card-overlay">
-                <span>Tanger</span>
-                <h3>Pinea Hills</h3>
-              </div>
-            </a>
-                
-
-            <a class="project-card" href="project-tanja-alya-nl.html" data-city="tanger">
-              <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/tanger/tanja-alya/tanja-alya-hero.png" alt="Marina View (Tanja Alya)" loading="lazy" />
-              <div class="project-card-overlay">
-                <span>Tanger</span>
-                <h3>Marina View (Tanja Alya)</h3>
-              </div>
-            </a>
-                
-
-            <a class="project-card" href="project-paris-residence-nl.html" data-city="tanger">
-              <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/tanger/paris-residence/paris-residence-hero.png" alt="Paris Residence" loading="lazy" />
-              <div class="project-card-overlay">
-                <span>Tanger</span>
-                <h3>Paris Residence</h3>
-              </div>
-            </a>
-                
-
-            <a class="project-card" href="project-rivana-residence-nl.html" data-city="tanger">
-              <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/tanger/rivana-residence/rivana-residence-hero.png" alt="Residence Rivana" loading="lazy" />
-              <div class="project-card-overlay">
-                <span>Tanger</span>
-                <h3>Residence Rivana</h3>
-              </div>
-            </a>
-                
-
-            
-                
-
-            <a class="project-card" href="project-residences-du-lac-prestigia-nl.html" data-city="rabat">
-              <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/rabat/residences-du-lac-prestigia/residences-du-lac-prestigia-hero.png" alt="Les Résidences du Lac (Prestigia)" loading="lazy" />
-              <div class="project-card-overlay">
-                <span>Rabat</span>
-                <h3>Les Résidences du Lac (Prestigia)</h3>
-              </div>
-            </a>
-            <a class="project-card" href="project-patio-verde-nl.html" data-city="rabat">
-              <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/rabat/patio-verde/patio-verde-hero.jpeg" alt="Ryad Al Andalous – Patio Verde" loading="lazy" />
-              <div class="project-card-overlay">
-                <span>Rabat</span>
-                <h3>Ryad Al Andalous – Patio Verde</h3>
-              </div>
-            </a>
-                
-
-            
-                
-
-            <a class="project-card" href="city-casablanca-nl.html" data-city="casablanca">
-              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Casablanca Project 01" loading="lazy" />
-              <div class="project-card-overlay">
-                <span>Casablanca</span>
-                <h3>Casablanca Project 01</h3>
-              </div>
-            </a>
-                
-
-            <a class="project-card" href="city-casablanca-nl.html" data-city="casablanca">
-              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Casablanca Project 02" loading="lazy" />
-              <div class="project-card-overlay">
-                <span>Casablanca</span>
-                <h3>Casablanca Project 02</h3>
-              </div>
-            </a>
-                
-
-            <a class="project-card" href="city-casablanca-nl.html" data-city="casablanca">
-              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Casablanca Project 03" loading="lazy" />
-              <div class="project-card-overlay">
-                <span>Casablanca</span>
-                <h3>Casablanca Project 03</h3>
-              </div>
-            </a>
-                
-
-            <a class="project-card" href="city-marrakesh-nl.html" data-city="marrakesh">
-              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Marrakesh Project 01" loading="lazy" />
-              <div class="project-card-overlay">
-                <span>Marrakesh</span>
-                <h3>Marrakesh Project 01</h3>
-              </div>
-            </a>
-                
-
-            <a class="project-card" href="city-marrakesh-nl.html" data-city="marrakesh">
-              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Marrakesh Project 02" loading="lazy" />
-              <div class="project-card-overlay">
-                <span>Marrakesh</span>
-                <h3>Marrakesh Project 02</h3>
-              </div>
-            </a>
-                
-
-            <a class="project-card" href="city-marrakesh-nl.html" data-city="marrakesh">
-              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Marrakesh Project 03" loading="lazy" />
-              <div class="project-card-overlay">
-                <span>Marrakesh</span>
-                <h3>Marrakesh Project 03</h3>
-              </div>
-            </a>
-                </div>
-  </section>
-
-  <script>
-    const tabs = document.querySelectorAll('.city-tab');
-    const cards = document.querySelectorAll('.project-card');
-    const setCity = (city) => {
-      tabs.forEach(t => t.setAttribute('aria-selected', t.dataset.city === city ? 'true' : 'false'));
-      cards.forEach(card => {
-        card.style.display = card.dataset.city === city ? 'block' : 'none';
-      });
-    };
-    tabs.forEach(tab => tab.addEventListener('click', () => setCity(tab.dataset.city)));
-    setCity('tanger');
-  
-    const slider = document.querySelector('.project-slider');
-    if (slider) {
-      const track = slider.querySelector('.project-track');
-      const cards = Array.from(track.children);
-      const prev = slider.querySelector('.slider-arrow.prev');
-      const next = slider.querySelector('.slider-arrow.next');
-      let index = 0;
-      const visible = () => {
-        const w = window.innerWidth;
-        if (w <= 720) return 1;
-        if (w <= 980) return 2;
-        return 3;
-      };
-      const update = () => {
-        const v = visible();
-        const max = Math.max(0, cards.length - v);
-        index = Math.min(index, max);
-        const cardWidth = cards[0].getBoundingClientRect().width;
-        const gap = 20;
-        const offset = index * (cardWidth + gap);
-        track.style.transform = `translateX(${-offset}px)`;
-        prev.disabled = index === 0;
-        next.disabled = index >= max;
-        prev.style.opacity = prev.disabled ? '0.4' : '1';
-        next.style.opacity = next.disabled ? '0.4' : '1';
-      };
-      prev.addEventListener('click', () => { index -= 1; update(); });
-      next.addEventListener('click', () => { index += 1; update(); });
-      window.addEventListener('resize', update);
-      update();
-    }
-
-  </script>
-
-  <section class="contact-section">
-    <div class="contact-card">
-      <div class="contact-media">
-        <div>
-          <div class="brochure-kicker">Neem contact op</div>
-          <h3>Plan een gesprek</h3>
-          <p>Laat je gegevens achter en we nemen snel contact met je op.</p>
-        </div>
-      </div>
-      <form class="contact-form">
-        <div class="row">
-          <input type="text" placeholder="Voornaam" />
-          <input type="text" placeholder="Achternaam" />
-        </div>
-        <input type="email" placeholder="E-mail" />
-        <input type="tel" placeholder="Telefoon" />
-        <textarea rows="4" placeholder="Bericht"></textarea>
-        <button type="button">Verstuur</button>
-      </form>
-    </div>
-  </section>
-
-  <section class="brochure-section">
-    <div class="brochure-card">
-      <div>
-        <div class="brochure-kicker">Gratis brochure</div>
-        <h3>Vastgoed in Marokko</h3>
-        <p>Download onze gratis brochure met marktinzichten en projectoverzicht.</p>
-        <a href="#">Download nu</a>
-      </div>
-      <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80" alt="Vastgoed in Marokko" />
-    </div>
-  </section>
-
-  
-  <section class="coming-section">
-    <div class="coming-card">
-      <div>
-        <span class="badge">Coming soon</span>
-        <h3>Verhuur je object via ons</h3>
-        <p>Binnenkort kun je je woning of project bij ons aanbieden voor verhuur.</p>
-      </div>
-      <div style="display:flex; justify-content:center;">
-        <span class="cta">Coming soon</span>
-      </div>
-    </div>
-  </section>
+<div class="topbar"><div class="wrap"><div>Maghreb Estates · Marokko</div><div class="lang-links"><a href="maroc-real-estate-nl.html" class="lang-link active">NL</a><a href="maroc-real-estate-en.html" class="lang-link">EN</a><a href="maroc-real-estate-fr.html" class="lang-link">FR</a><a href="maroc-real-estate-ar.html" class="lang-link">AR</a></div></div></div>
+<div class="nav"><div class="wrap"><a class="logo" href="maroc-real-estate-nl.html">Maghreb Estates</a><div class="nav-links"><a href="city-tanger-nl.html">Tanger</a><a href="city-rabat-nl.html">Rabat</a><a href="city-casablanca-nl.html">Casablanca</a><a href="city-marrakesh-nl.html">Marrakesh</a><a href="city-mohammedia-nl.html">Mohammedia</a><a href="city-fez-nl.html">Fez</a></div></div></div>
+<section class="hero"><div class="hero-media"><img src="https://cdn.pixabay.com/photo/2017/10/24/16/19/tangier-2885105_1280.jpg" alt="Vastgoed in Marokko"/></div>
+<div class="hero-content"><div class="hero-card"><h1>Vastgoed in Marokko</h1><p>Ontdek zorgvuldig geselecteerde projecten in de belangrijkste steden van Marokko.</p><a class="cta" href="#projects">Bekijk projecten</a></div></div></section>
+<section class="section" id="projects"><h2>Projecten per stad</h2><p>Selecteer een stad om alle projecten te bekijken.</p><div class="city-tabs" role="tablist"><button class="city-tab" data-city="tanger" aria-selected="true">Tanger</button><button class="city-tab" data-city="rabat" aria-selected="false">Rabat</button><button class="city-tab" data-city="casablanca" aria-selected="false">Casablanca</button><button class="city-tab" data-city="marrakesh" aria-selected="false">Marrakesh</button><button class="city-tab" data-city="mohammedia" aria-selected="false">Mohammedia</button><button class="city-tab" data-city="fez" aria-selected="false">Fez</button></div>
+<div class="project-slider"><button class="slider-arrow prev" aria-label="Previous">&#10094;</button><button class="slider-arrow next" aria-label="Next">&#10095;</button><div class="project-viewport"><div class="project-track"><a class="project-card" href="project-achakar-gardens-nl.html" data-city="tanger">
+  <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/tanger/achakar-gardens/achakar-gardens-hero.png" alt="Achakar Gardens" loading="lazy"/>
+  <div class="project-card-overlay"><span>Tanger</span><h3>Achakar Gardens</h3></div>
+</a>
+<a class="project-card" href="project-pinea-hills-nl.html" data-city="tanger">
+  <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/tanger/pinea-hills/pinea-hills-hero.png" alt="Pinea Hills" loading="lazy"/>
+  <div class="project-card-overlay"><span>Tanger</span><h3>Pinea Hills</h3></div>
+</a>
+<a class="project-card" href="project-tanja-alya-nl.html" data-city="tanger">
+  <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/tanger/tanja-alya/tanja-alya-hero.png" alt="Marina View (Tanja Alya)" loading="lazy"/>
+  <div class="project-card-overlay"><span>Tanger</span><h3>Marina View (Tanja Alya)</h3></div>
+</a>
+<a class="project-card" href="project-paris-residence-nl.html" data-city="tanger">
+  <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/tanger/paris-residence/paris-residence-hero.png" alt="Paris Residence" loading="lazy"/>
+  <div class="project-card-overlay"><span>Tanger</span><h3>Paris Residence</h3></div>
+</a>
+<a class="project-card" href="project-rivana-residence-nl.html" data-city="tanger">
+  <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/tanger/rivana-residence/rivana-residence-hero.png" alt="Residence Rivana" loading="lazy"/>
+  <div class="project-card-overlay"><span>Tanger</span><h3>Residence Rivana</h3></div>
+</a>
+<a class="project-card" href="project-residences-du-lac-prestigia-nl.html" data-city="rabat">
+  <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/rabat/residences-du-lac-prestigia/residences-du-lac-prestigia-hero.png" alt="Les Residences du Lac - Prestigia" loading="lazy"/>
+  <div class="project-card-overlay"><span>Rabat</span><h3>Les Residences du Lac - Prestigia</h3></div>
+</a>
+<a class="project-card" href="project-patio-verde-nl.html" data-city="rabat">
+  <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/rabat/patio-verde/patio-verde-hero.jpeg" alt="Ryad Al Andalous - Patio Verde" loading="lazy"/>
+  <div class="project-card-overlay"><span>Rabat</span><h3>Ryad Al Andalous - Patio Verde</h3></div>
+</a>
+<a class="project-card" href="project-the-park-2-cgi-nl.html" data-city="casablanca">
+  <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/casablanca/the-park-2-cgi/the-park-2-cgi-hero.jpg" alt="The Park 2 - CGI" loading="lazy"/>
+  <div class="project-card-overlay"><span>Casablanca</span><h3>The Park 2 - CGI</h3></div>
+</a>
+<a class="project-card" href="project-residence-la-rochelle-nl.html" data-city="casablanca">
+  <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/casablanca/residence-la-rochelle/residence-la-rochelle-hero.jpg" alt="Residence La Rochelle" loading="lazy"/>
+  <div class="project-card-overlay"><span>Casablanca</span><h3>Residence La Rochelle</h3></div>
+</a>
+<a class="project-card" href="project-casablanca-marina-cgi-nl.html" data-city="casablanca">
+  <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/casablanca/casablanca-marina-cgi/casablanca-marina-cgi-hero.jpg" alt="Casablanca Marina - CGI" loading="lazy"/>
+  <div class="project-card-overlay"><span>Casablanca</span><h3>Casablanca Marina - CGI</h3></div>
+</a>
+<a class="project-card" href="project-les-patios-danfa-nl.html" data-city="casablanca">
+  <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/casablanca/les-patios-danfa/les-patios-danfa-hero.jpg" alt="Les Patios d'Anfa" loading="lazy"/>
+  <div class="project-card-overlay"><span>Casablanca</span><h3>Les Patios d'Anfa</h3></div>
+</a>
+<a class="project-card" href="project-olivia-gardens-nl.html" data-city="marrakesh">
+  <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/marrakesh/olivia-gardens/olivia-gardens-hero.jpg" alt="Olivia Gardens" loading="lazy"/>
+  <div class="project-card-overlay"><span>Marrakesh</span><h3>Olivia Gardens</h3></div>
+</a>
+<a class="project-card" href="project-jnane-al-yassamine-nl.html" data-city="mohammedia">
+  <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/mohammedia/jnane-al-yassamine/jnane-al-yassamine-hero.jpg" alt="Jnane Al Yassamine" loading="lazy"/>
+  <div class="project-card-overlay"><span>Mohammedia</span><h3>Jnane Al Yassamine</h3></div>
+</a>
+<a class="project-card" href="project-residence-les-joyauxduparc-prestigia-nl.html" data-city="fez">
+  <img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/fez/residence-les-joyauxduparc-prestigia/residence-les-joyauxduparc-prestigia-hero.jpg" alt="Residence Les Joyaux du Parc - Prestigia" loading="lazy"/>
+  <div class="project-card-overlay"><span>Fez</span><h3>Residence Les Joyaux du Parc - Prestigia</h3></div>
+</a></div></div></div></section>
+<section class="contact-section"><div class="contact-card"><div class="contact-media"><div><div class="brochure-kicker">Neem contact op</div><h3>Neem contact op</h3></div></div><form class="contact-form"><div class="row"><input placeholder="First name"/><input placeholder="Last name"/></div><input placeholder="E-mail"/><input placeholder="Phone"/><textarea rows="4" placeholder="Message"></textarea><button type="button">Verstuur</button></form></div></section>
+<section class="brochure-section"><div class="brochure-card"><div><div class="brochure-kicker">Gratis brochure</div><h3>Vastgoed in Marokko</h3><p>Download onze gratis brochure met marktinzichten en projectoverzicht.</p><a href="#">Download nu</a></div><img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80" alt="Vastgoed in Marokko"/></div></section>
+<section class="coming-section"><div class="coming-card"><div><span class="badge">Coming soon</span><h3>Verhuur je object via ons</h3><p>Binnenkort kun je je woning of project bij ons aanbieden voor verhuur.</p></div><div style="display:flex;justify-content:center;"><span class="cta">Coming soon</span></div></div></section>
 
 <footer class="site-footer">
-    <div class="footer-wrap">
-      <div class="footer-column">
-        <div class="footer-logo">Maghreb Estates</div>
-        <p>Uw partner voor vastgoed in Marokko, met lokale kennis en betrouwbare begeleiding.</p>
-      </div>
-      
-      
-      <div class="footer-column">
-        <h4>Steden</h4>
-        <ul>
-          <li><a href="city-tanger-nl.html">Tanger</a></li>
-          <li><a href="city-rabat-nl.html">Rabat</a></li>
-          <li><a href="city-casablanca-nl.html">Casablanca</a></li>
-          <li><a href="city-marrakesh-nl.html">Marrakesh</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Contact</h4>
-        <ul>
-          <li>+212 5 39 000 000</li>
-          <li>info@atlascoastrealty.com</li>
-          <li>Tanger, Marokko</li>
-        </ul>
-      </div>
+  <div class="footer-wrap">
+    <div class="footer-column">
+      <div class="footer-logo">Maghreb Estates</div>
+      <p>Maghreb Estates</p>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Maghreb Estates. Alle rechten voorbehouden.</span>
+    <div class="footer-column">
+      <h4>Steden</h4>
+      <ul>
+        <li><a href="city-tanger-nl.html">Tanger</a></li>
+        <li><a href="city-rabat-nl.html">Rabat</a></li>
+        <li><a href="city-casablanca-nl.html">Casablanca</a></li>
+        <li><a href="city-marrakesh-nl.html">Marrakesh</a></li>
+        <li><a href="city-mohammedia-nl.html">Mohammedia</a></li>
+        <li><a href="city-fez-nl.html">Fez</a></li>
+      </ul>
     </div>
-  </footer>
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <ul><li>+212 5 39 000 000</li><li>info@maghrebestates.com</li><li>Morocco</li></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Maghreb Estates</div>
+</footer>
 
-</body>
-</html>
+<script>
+const tabs=document.querySelectorAll('.city-tab');const cards=Array.from(document.querySelectorAll('.project-card'));const slider=document.querySelector('.project-slider');const track=slider.querySelector('.project-track');const prev=slider.querySelector('.slider-arrow.prev');const next=slider.querySelector('.slider-arrow.next');let index=0;
+const visible=()=>window.innerWidth<=720?1:(window.innerWidth<=980?2:3);
+const filtered=()=>cards.filter(c=>c.style.display!=='none');
+function applyCity(city){tabs.forEach(t=>t.setAttribute('aria-selected',t.dataset.city===city?'true':'false'));cards.forEach(c=>c.style.display=c.dataset.city===city?'block':'none');index=0;update();}
+function update(){const list=filtered();const v=visible();const max=Math.max(0,list.length-v);index=Math.max(0,Math.min(index,max));const card=list[0];if(!card){track.style.transform='translateX(0)';prev.disabled=true;next.disabled=true;return;}const gap=20;const w=card.getBoundingClientRect().width;track.style.transform=`translateX(${-(index*(w+gap))}px)`;prev.disabled=index===0;next.disabled=index>=max;prev.style.opacity=prev.disabled?'.4':'1';next.style.opacity=next.disabled?'.4':'1';}
+prev.addEventListener('click',()=>{index--;update();});next.addEventListener('click',()=>{index++;update();});tabs.forEach(t=>t.addEventListener('click',()=>applyCity(t.dataset.city)));window.addEventListener('resize',update);applyCity('tanger');
+</script>
+</body></html>

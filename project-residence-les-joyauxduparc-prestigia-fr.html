@@ -1,0 +1,79 @@
+<!doctype html><html lang="fr" dir="ltr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Residence Les Joyaux du Parc - Prestigia | Maghreb Estates</title><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+    :root { --navy:#0c1c3a; --navy-700:#0b1630; --ink:#10131a; --muted:#5c6472; --shadow:0 18px 50px rgba(13,20,37,.12); --radius:18px; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Manrope",sans-serif; color:var(--ink); background:#f4f6fb; }
+    a { color:inherit; text-decoration:none; }
+    .topbar { background:var(--navy-700); color:#fff; font-size:.85rem; }
+    .topbar .wrap { max-width:1200px; margin:0 auto; padding:10px 20px; display:flex; justify-content:space-between; gap:12px; align-items:center; }
+    .lang-links { display:flex; gap:10px; }
+    .lang-link { color:#dfe3f1; font-weight:600; }
+    .lang-link.active { color:#fff; text-decoration:underline; }
+    .nav { background:#fff; border-bottom:1px solid #e6e8ef; position:sticky; top:0; z-index:10; }
+    .nav .wrap { max-width:1200px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .logo { font-family:"Playfair Display",serif; font-size:20px; letter-spacing:.4px; color:var(--navy); }
+    .nav-links { display:flex; gap:16px; font-weight:600; color:#3b4252; overflow-x:auto; scrollbar-width:none; }
+    .nav-links::-webkit-scrollbar { display:none; }
+    .site-footer { background:var(--navy-700); color:#dfe3f1; padding:48px 20px 24px; margin-top:48px; }
+    .footer-wrap { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.2fr 1fr 1.2fr; gap:24px; }
+    .footer-logo { font-family:"Playfair Display",serif; font-size:22px; color:#fff; }
+    .footer-column h4 { margin:0 0 12px; color:#fff; font-size:1rem; }
+    .footer-column ul { list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+    .footer-column a { color:#dfe3f1; }
+    .footer-bottom { max-width:1200px; margin:32px auto 0; padding-top:16px; border-top:1px solid rgba(255,255,255,.15); font-size:.85rem; }
+    @media (max-width:980px) { .footer-wrap { grid-template-columns:1fr; } }
+
+.hero{position:relative;color:#fff} .hero-media{position:relative;height:520px;overflow:hidden} .hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover} .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(9,18,35,.75),rgba(9,18,35,.2))}
+.hero-content{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.7fr);gap:24px;align-items:center;max-width:1200px;margin:0 auto;padding:0 20px} .hero-left{z-index:2;display:grid;gap:12px} .pill{display:inline-flex;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.2);font-weight:600;width:fit-content}
+.hero-left h1{font-size:clamp(2.2rem,4vw,3.4rem);margin:0} .hero-left .meta{display:flex;flex-wrap:wrap;gap:14px;font-size:.95rem;color:#e6e8ef}
+.hero-form{z-index:2;background:#fff;color:var(--ink);border-radius:18px;padding:20px;box-shadow:var(--shadow);display:grid;gap:12px} .hero-form input,.hero-form textarea{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #e3e6ef;font-family:inherit} .hero-form button{background:var(--navy);color:#fff;border:none;padding:12px;border-radius:999px}
+.section{max-width:1200px;margin:0 auto;padding:48px 20px} .section h2{font-family:"Playfair Display",serif;margin-bottom:16px}
+.overview{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:start} .facts{background:#fff;border-radius:16px;box-shadow:var(--shadow);overflow:hidden} .facts header{background:var(--navy);color:#fff;padding:14px 18px;font-weight:700} .facts ul{list-style:none;margin:0;padding:0} .facts li{display:flex;justify-content:space-between;padding:12px 18px;border-bottom:1px solid #eef1f7}
+.gallery-slider{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);height:420px;background:#e9edf5} .gallery-slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease} .gallery-slider img.active{opacity:1}
+.slider-btn{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:none;background:rgba(12,28,58,.75);color:#fff;font-size:20px;cursor:pointer;display:grid;place-items:center;z-index:3} .slider-btn.prev{left:14px} .slider-btn.next{right:14px} .slider-btn.fullscreen{top:18px;right:18px;transform:none;font-size:16px;width:36px;height:36px}
+.slider-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:2} .slider-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.6);cursor:pointer} .slider-dot.active{background:#fff}
+.nearby{display:grid;grid-template-columns:1fr 1fr;gap:18px} .nearby-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px} .nearby-card{background:#fff;padding:14px;border-radius:14px;box-shadow:var(--shadow);font-size:.9rem} .map{background:#e9edf5;border-radius:16px;min-height:360px;box-shadow:var(--shadow)}
+.faq{background:#fff;border-radius:16px;box-shadow:var(--shadow);overflow:hidden} .faq-item{width:100%;text-align:left;background:#fff;border:none;padding:14px 18px;border-bottom:1px solid #eef1f7;display:flex;justify-content:space-between;align-items:center;font-weight:600;cursor:pointer} .faq-panel{display:none;padding:0 18px 16px;color:#4b5563;border-bottom:1px solid #eef1f7} .faq-item[aria-expanded="true"] + .faq-panel{display:block}
+@media (max-width:980px){.hero-content{grid-template-columns:1fr;padding-top:60px} .hero-form{max-width:420px} .overview,.nearby{grid-template-columns:1fr}}
+@media (max-width:720px){.nav .wrap{flex-direction:column;align-items:flex-start} .hero-media{height:420px} .hero{background:#f4f6fb} .hero-content{position:static;padding:24px 20px 0} .hero-left{color:var(--ink)} .hero-left .pill{background:#e8ecf6;color:var(--navy)} .hero-left .meta{color:#5c6472} .hero-form{display:none} .section{padding:36px 20px} .gallery-slider{height:280px} .nearby-list{grid-template-columns:1fr}}
+</style></head>
+<body>
+<div class="topbar"><div class="wrap"><div>Maghreb Estates · Fes</div><div>NL · EN · FR · AR</div></div></div>
+<div class="nav"><div class="wrap"><a class="logo" href="maroc-real-estate-fr.html">Maghreb Estates</a><div class="nav-links"><a href="#overview">Présentation</a><a href="#gallery">Galerie</a><a href="#nearby">À proximité</a><a href="#faq">FAQ</a></div></div></div>
+<section class="hero"><div class="hero-media"><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/fez/residence-les-joyauxduparc-prestigia/residence-les-joyauxduparc-prestigia-hero.jpg" alt="Residence Les Joyaux du Parc - Prestigia"/></div><div class="hero-content"><div class="hero-left"><div class="pill">Projet</div><h1>Residence Les Joyaux du Parc - Prestigia</h1><div class="meta"><span>Champ de Course, Fes</span><span>Statut: Under construction</span><span>Livraison: 2028</span></div><p>Projet Prestigia à Fes avec finitions haut de gamme.</p><p style="color:#5c6472;font-size:.9rem;">Bron: <a href="https://agenz.ma/en/immobilier-neuf/immo-fes/champ-de-course/residence-les-joyauxduparc-prestigia" target="_blank" rel="noopener">https://agenz.ma/en/immobilier-neuf/immo-fes/champ-de-course/residence-les-joyauxduparc-prestigia</a></p></div><form class="hero-form"><h3>Contactez-nous</h3><input placeholder="First name"/><input placeholder="Last name"/><input placeholder="E-mail"/><input placeholder="Phone"/><textarea rows="3" placeholder="Message"></textarea><button type="button">Envoyer</button></form></div></section>
+<section id="overview" class="section"><div class="overview"><div><h2>Présentation</h2><p>Projet Prestigia à Fes avec finitions haut de gamme.</p><h3>Prestations</h3><ul><li>Residence Les Joyaux du Parc - Prestigia</li><li>Champ de Course, Fes</li><li>Statut: Under construction</li></ul></div><div class="facts"><header>Faits clés</header><ul><li><span>Bedrooms</span><strong>2-4</strong></li><li><span>Surface</span><strong>90-220 m2</strong></li><li><span>Price</span><strong>On request</strong></li><li><span>Livraison</span><strong>2028</strong></li></ul></div></div></section>
+<section id="gallery" class="section"><h2>Galerie</h2><div class="gallery-slider" data-gallery><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/fez/residence-les-joyauxduparc-prestigia/residence-les-joyauxduparc-prestigia-hero.jpg" alt="Residence Les Joyaux du Parc - Prestigia"/><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/fez/residence-les-joyauxduparc-prestigia/residence-les-joyauxduparc-prestigia-gallery-01.jpg" alt="Residence Les Joyaux du Parc - Prestigia"/><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/fez/residence-les-joyauxduparc-prestigia/residence-les-joyauxduparc-prestigia-gallery-02.jpg" alt="Residence Les Joyaux du Parc - Prestigia"/><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/fez/residence-les-joyauxduparc-prestigia/residence-les-joyauxduparc-prestigia-gallery-03.jpg" alt="Residence Les Joyaux du Parc - Prestigia"/><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/fez/residence-les-joyauxduparc-prestigia/residence-les-joyauxduparc-prestigia-gallery-04.jpg" alt="Residence Les Joyaux du Parc - Prestigia"/><img src="https://ayoubdouider.github.io/Maghreb-Estates/assets/fez/residence-les-joyauxduparc-prestigia/residence-les-joyauxduparc-prestigia-gallery-05.jpg" alt="Residence Les Joyaux du Parc - Prestigia"/><button class="slider-btn prev" aria-label="Previous">&#10094;</button><button class="slider-btn next" aria-label="Next">&#10095;</button><button class="slider-btn fullscreen" aria-label="Fullscreen">⤢</button><div class="slider-dots"><span class="slider-dot"></span><span class="slider-dot"></span><span class="slider-dot"></span><span class="slider-dot"></span><span class="slider-dot"></span><span class="slider-dot"></span></div></div></section>
+<section id="nearby" class="section"><h2>À proximité</h2><div class="nearby"><div class="nearby-list"><div class="nearby-card">City center</div><div class="nearby-card">Schools</div><div class="nearby-card">Restaurants</div><div class="nearby-card">Main roads</div></div><div class="map"></div></div></section>
+<section id="faq" class="section"><h2>FAQ</h2><div class="faq"><button class="faq-item" type="button" aria-expanded="false"><span>Où se situe le projet ?</span><span>+</span></button><div class="faq-panel">Consultez la carte et contactez-nous pour l'adresse exacte de visite.</div><button class="faq-item" type="button" aria-expanded="false"><span>Quels types sont disponibles ?</span><span>+</span></button><div class="faq-panel">Appartements ou villas selon le projet.</div><button class="faq-item" type="button" aria-expanded="false"><span>Quel est le délai de livraison ?</span><span>+</span></button><div class="faq-panel">Voir les faits clés en haut de page.</div><button class="faq-item" type="button" aria-expanded="false"><span>Existe-t-il un plan de paiement ?</span><span>+</span></button><div class="faq-panel">Oui, contactez-nous pour les conditions actuelles.</div></div></section>
+
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-column">
+      <div class="footer-logo">Maghreb Estates</div>
+      <p>Maghreb Estates</p>
+    </div>
+    <div class="footer-column">
+      <h4>Villes</h4>
+      <ul>
+        <li><a href="city-tanger-fr.html">Tanger</a></li>
+        <li><a href="city-rabat-fr.html">Rabat</a></li>
+        <li><a href="city-casablanca-fr.html">Casablanca</a></li>
+        <li><a href="city-marrakesh-fr.html">Marrakech</a></li>
+        <li><a href="city-mohammedia-fr.html">Mohammedia</a></li>
+        <li><a href="city-fez-fr.html">Fes</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <ul><li>+212 5 39 000 000</li><li>info@maghrebestates.com</li><li>Morocco</li></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Maghreb Estates</div>
+</footer>
+
+<script>
+const gallery=document.querySelector('[data-gallery]');if(gallery){const images=Array.from(gallery.querySelectorAll('img'));const dots=Array.from(gallery.querySelectorAll('.slider-dot'));const prev=gallery.querySelector('.slider-btn.prev');const next=gallery.querySelector('.slider-btn.next');const full=gallery.querySelector('.slider-btn.fullscreen');let i=0;const show=(n)=>{images.forEach((img,j)=>img.classList.toggle('active',j===n));dots.forEach((d,j)=>d.classList.toggle('active',j===n));i=n;};const step=(d)=>show((i+d+images.length)%images.length);dots.forEach((d,idx)=>d.addEventListener('click',()=>show(idx)));prev.addEventListener('click',()=>step(-1));next.addEventListener('click',()=>step(1));full.addEventListener('click',()=>{const a=gallery.querySelector('img.active')||images[0];if(a.requestFullscreen)a.requestFullscreen();});show(0);setInterval(()=>step(1),5000);}
+document.querySelectorAll('.faq-item').forEach(btn=>btn.addEventListener('click',()=>{const e=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',e?'false':'true');}));
+</script>
+</body></html>
